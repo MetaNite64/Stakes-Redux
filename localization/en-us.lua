@@ -24,6 +24,14 @@ return {
           "{s:0.8}Applies Orange Stake{}"
         }
       },
+      stake_green = {
+        name = "Green Stake",
+        text = {
+          "Interest is earned at a rate",
+          "of {C:gold}$1{} for every {C:gold}$6{} owned",
+          "{s:0.8}Applies Yellow Stake{}"
+        }
+      },
     },
     Other = {
       srdx_yellow_sticker = {
@@ -34,6 +42,6 @@ return {
           "{C:attention}Stake{} difficulty"
         }
       }
-    }
+    },
   }
 }
