@@ -1,0 +1,9 @@
+--[[
+STAKES REDUX
+- by metanite64
+
+A mod that adds a separate branch of stakes dedicated to stickers,
+and reworks most of the vanilla stakes.
+--]]
+
+assert(SMODS.load_file("stakes/orange.lua"))()
