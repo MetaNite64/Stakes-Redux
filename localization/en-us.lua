@@ -12,7 +12,7 @@ return {
       stake_orange = {
         name = "Orange Stake",
         text = {
-          "{C:dark_edition}Editions{} are less common",
+          "{C:dark_edition}Editions{} are twice as rare",
           "{s:0.8}Applies Red Stake{}"
         }
       },
