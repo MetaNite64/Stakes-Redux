@@ -32,6 +32,10 @@ SMODS.current_mod.optional_features = function()
   } }
 end
 
+assert(SMODS.load_file("stakes/tanzanite.lua"))()
+assert(SMODS.load_file("stakes/sapphire.lua"))()
+assert(SMODS.load_file("stakes/citrine.lua"))()
+
 assert(SMODS.load_file("stakes/pink.lua"))()
 assert(SMODS.load_file("stakes/red.lua"))()
 assert(SMODS.load_file("stakes/orange.lua"))()
@@ -40,10 +44,6 @@ assert(SMODS.load_file("stakes/green.lua"))()
 assert(SMODS.load_file("stakes/blue.lua"))()
 assert(SMODS.load_file("stakes/purple.lua"))()
 assert(SMODS.load_file("stakes/black.lua"))()
-
-assert(SMODS.load_file("stakes/tanzanite.lua"))()
-assert(SMODS.load_file("stakes/sapphire.lua"))()
-assert(SMODS.load_file("stakes/citrine.lua"))()
 
 assert(SMODS.load_file("stakes/gold.lua"))()
 assert(SMODS.load_file("stakes/platinum.lua"))()
