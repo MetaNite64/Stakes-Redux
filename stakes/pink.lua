@@ -10,7 +10,7 @@ SMODS.Stake {
 }
 
 -- Go to the shop on white stake only
-SMODS.current_mod.calculate = function(self, context)
+SRDX_CALCS[#SRDX_CALCS + 1] = function(self, context)
   if context.skip_blind and not G.GAME.modifiers.srdx_skip_shops then
     G.GAME.no_saved = true
     return { func = function()

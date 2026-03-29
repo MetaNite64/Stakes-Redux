@@ -64,14 +64,6 @@ return {
           "{s:0.8}Applies Purple Stake{}"
         }
       },
-      stake_gold = {
-        name = "Gold Stake",
-        text = {
-          "{C:attention}X1.25{} shop costs, rounded",
-          "to the nearest dollar",
-          "{s:0.8}Applies Black Stake and Citrine Stake{}"
-        }
-      },
 
       stake_srdx_tanzanite = {
         name = "Tanzanite Stake",
@@ -97,6 +89,23 @@ return {
           "{s:0.8}Applies Sapphire Stake{}"
         }
       },
+
+      stake_gold = {
+        name = "Gold Stake",
+        text = {
+          "{C:attention}X1.25{} shop costs, rounded",
+          "to the nearest dollar",
+          "{s:0.8}Applies Black Stake and Citrine Stake{}"
+        }
+      },
+      stake_srdx_platinum = {
+        name = "Platinum Stake",
+        text = {
+          "{C:attention}Stickers{} can appear",
+          "on {C:attention}playing cards{}",
+          "{s:0.8}Applies Gold Stake{}"
+        }
+      }
     },
     Other = {
       srdx_yellow_sticker = {

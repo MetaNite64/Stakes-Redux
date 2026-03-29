@@ -11,11 +11,26 @@ G.C.SRDX_PINK = HEX("FDBDBF")
 G.C.SRDX_TANZANITE = HEX("C75985")
 G.C.SRDX_SAPPHIRE = HEX("687EE7")
 G.C.SRDX_CITRINE = HEX("E3B448")
+G.C.SRDX_PLATINUM = HEX("B8B8E1")
 
 G.ARGS.LOC_COLOURS["srdx_pink"] = G.C.SRDX_PINK
 G.ARGS.LOC_COLOURS["srdx_tanzanite"] = G.C.SRDX_TANZANITE
 G.ARGS.LOC_COLOURS["srdx_sapphire"] = G.C.SRDX_SAPPHIRE
 G.ARGS.LOC_COLOURS["srdx_citrine"] = G.C.SRDX_CITRINE
+G.ARGS.LOC_COLOURS["srdx_platinum"] = G.C.SRDX_PLATINUM
+
+SRDX_CALCS = {}
+SMODS.current_mod.calculate = function(self, context)
+  for i, v in ipairs(SRDX_CALCS) do
+    v(self, context)
+  end
+end
+
+SMODS.current_mod.optional_features = function()
+  return { cardareas = {
+    discard = true, deck = true
+  } }
+end
 
 assert(SMODS.load_file("stakes/pink.lua"))()
 assert(SMODS.load_file("stakes/red.lua"))()
@@ -31,3 +46,4 @@ assert(SMODS.load_file("stakes/sapphire.lua"))()
 assert(SMODS.load_file("stakes/citrine.lua"))()
 
 assert(SMODS.load_file("stakes/gold.lua"))()
+assert(SMODS.load_file("stakes/platinum.lua"))()

@@ -1,0 +1,46 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+# Card.set_ability()
+# carry over playing card stickers
+# credit to Cryptid
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+match_indent = true
+position = "before"
+pattern = "order = center.order or nil,"
+payload = '''
+eternal = self.ability and self.ability.eternal,
+perishable = self.ability and self.ability.perishable,
+perish_tally = self.ability and self.ability.perish_tally,
+rental = self.ability and self.ability.rental,
+'''
+
+# SMODS.calculate_destroying_cards()
+# don't destroy eternal cards
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/utils.lua"]'
+match_indent = true
+position = "after"
+pattern = "-- TARGET: card destroyed"
+payload = "if not SMODS.is_eternal(card) then"
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/utils.lua"]'
+match_indent = true
+position = "after"
+pattern = "cards_destroyed[#cards_destroyed+1] = card"
+payload = "end"
+
+# G.FUNCS.discard_cards_from_highlighted()
+# don't destroy eternal cards on discard
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+match_indent = true
+position = "at"
+pattern = "if key == 'remove' or (type(eval2) == 'table' and eval2.remove) then removed = true end"
+payload = "if (key == 'remove' or (type(eval2) == 'table' and eval2.remove) and not SMODS.is_eternal(G.hand.highlighted[i])) then removed = true end"
