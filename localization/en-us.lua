@@ -32,6 +32,14 @@ return {
           "{s:0.8}Applies Yellow Stake{}"
         }
       },
+      stake_blue = {
+        name = "Blue Stake",
+        text = {
+          "Hand level ups are",
+          "{C:attention}X0.8{} as effective",
+          "{s:0.8}Applies Green Stake{}"
+        }
+      }
     },
     Other = {
       srdx_yellow_sticker = {
