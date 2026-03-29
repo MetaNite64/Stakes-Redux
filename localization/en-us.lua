@@ -56,6 +56,14 @@ return {
           "{s:0.8}Applies Purple Stake{}"
         }
       },
+      stake_gold = {
+        name = "Gold Stake",
+        text = {
+          "{C:attention}X1.25{} shop costs, rounded",
+          "to the nearest dollar",
+          "{s:0.8}Applies Black Stake{}"
+        }
+      },
     },
     Other = {
       srdx_yellow_sticker = {
