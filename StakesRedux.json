@@ -7,6 +7,6 @@
   "main_file": "main.lua",
   "version": "0.0.0",
   "dependencies": [
-    "Steamodded (==1.*~)"
+    "Steamodded (>=1.0.0~BETA-1503a)"
   ]
 }
