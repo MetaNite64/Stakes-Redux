@@ -1,0 +1,31 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+# account for double showdown modifier
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+match_indent = true
+position = "at"
+pattern = "((G.GAME.round_resets.ante)%G.GAME.win_ante == 0 and G.GAME.round_resets.ante >= 2) =="
+payload = "((G.GAME.round_resets.ante) % (G.GAME.win_ante / (G.GAME.modifiers.srdx_double_showdowns and 2 or 1)) == 0 and G.GAME.round_resets.ante >= 2) =="
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+match_indent = true
+position = "at"
+pattern = '''
+elseif not v.boss.showdown and (v.boss.min <= math.max(1, G.GAME.round_resets.ante) and ((math.max(1, G.GAME.round_resets.ante))%G.GAME.win_ante ~= 0 or G.GAME.round_resets.ante < 2)) then
+    eligible_bosses[k] = res and true or nil
+elseif v.boss.showdown and (G.GAME.round_resets.ante)%G.GAME.win_ante == 0 and G.GAME.round_resets.ante >= 2 then
+    eligible_bosses[k] = res and true or nil
+'''
+payload = '''
+elseif not v.boss.showdown and (v.boss.min <= math.max(1, G.GAME.round_resets.ante) and ((math.max(1, G.GAME.round_resets.ante)) % (G.GAME.win_ante / (G.GAME.modifiers.srdx_double_showdowns and 2 or 1)) ~= 0 or G.GAME.round_resets.ante < 2)) then
+    eligible_bosses[k] = res and true or nil
+elseif v.boss.showdown and (G.GAME.round_resets.ante) % (G.GAME.win_ante / (G.GAME.modifiers.srdx_double_showdowns and 2 or 1)) == 0 and G.GAME.round_resets.ante >= 2 then
+    eligible_bosses[k] = res and true or nil
+'''
+

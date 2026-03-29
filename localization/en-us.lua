@@ -39,7 +39,15 @@ return {
           "{C:attention}80%{} as effective",
           "{s:0.8}Applies Green Stake{}"
         }
-      }
+      },
+      stake_purple = {
+        name = "Purple Stake",
+        text = {
+          "{C:attention}Showdown Blinds{}",
+          "appear {C:attention}twice{} as often",
+          "{s:0.8}Applies Blue Stake{}"
+        }
+      },
     },
     Other = {
       srdx_yellow_sticker = {
