@@ -7,21 +7,20 @@ SMODS.Stake {
   shiny = true,
   modifiers = function()
     G.GAME.modifiers.srdx_sticker_playing_cards = true
-  end
-}
+  end,
 
--- apply stickers to playing cards
-SRDX_CALCS[#SRDX_CALCS + 1] = function(self, context)
-  if (context.modify_booster_card or context.modify_shop_card) and G.GAME.modifiers.srdx_sticker_playing_cards then
-    local set = context.card.config.center.set
-    if set == "Default" or set == "Enhanced" then
-      local etper_poll = pseudorandom("etper_playing_card" .. G.GAME.round_resets.ante)
-      if etper_poll > 0.7 then context.card:set_eternal(true)
-      elseif etper_poll > 0.4 then context.card:set_perishable(true) end
-      if pseudorandom("rental_playing_card" .. G.GAME.round_resets.ante) > 0.7 then context.card:set_rental(true) end
+  calculate = function(self, context)
+    if context.srdx_modify_booster_card or context.modify_shop_card then
+      local set = context.card.config.center.set
+      if set == "Default" or set == "Enhanced" then
+        local etper_poll = pseudorandom("etper_playing_card" .. G.GAME.round_resets.ante)
+        if etper_poll > 0.7 then context.card:set_eternal(true)
+        elseif etper_poll > 0.4 then context.card:set_perishable(true) end
+        if pseudorandom("rental_playing_card" .. G.GAME.round_resets.ante) > 0.7 then context.card:set_rental(true) end
+      end
     end
   end
-end
+}
 
 -- Eternal: allow playing cards
 local set_eternal_ref = Card.set_eternal

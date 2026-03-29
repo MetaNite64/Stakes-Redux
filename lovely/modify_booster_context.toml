@@ -1,0 +1,17 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+# srdx_modify_booster_card context
+# copied from smods, to be deleted when next smods releases
+[[patches]]
+[patches.pattern]
+target = 'card.lua'
+match_indent = true
+position = 'before'
+pattern = '''
+card.T.x = self.T.x
+'''
+payload = '''
+SMODS.calculate_context({srdx_modify_booster_card = true, booster = self, card = card, index = i})
+'''
