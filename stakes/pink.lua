@@ -3,7 +3,7 @@ SMODS.Stake {
   prefix_config = { applied_stakes = false },
   applied_stakes = { "stake_white" },
   above_stake = "citrine",
-  colour = G.C.PINK,
+  colour = G.C.SRDX_PINK,
   modifiers = function()
     G.GAME.modifiers.srdx_skip_shops = true
   end
