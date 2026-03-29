@@ -48,6 +48,14 @@ return {
           "{s:0.8}Applies Blue Stake{}"
         }
       },
+      stake_black = {
+        name = "Black Stake",
+        text = {
+          "Required score scales",
+          "even faster for each {C:attention}Ante{}",
+          "{s:0.8}Applies Purple Stake{}"
+        }
+      },
     },
     Other = {
       srdx_yellow_sticker = {
