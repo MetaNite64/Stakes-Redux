@@ -36,7 +36,7 @@ return {
         name = "Blue Stake",
         text = {
           "Hand level ups are",
-          "{C:attention}X0.8{} as effective",
+          "{C:attention}80%{} as effective",
           "{s:0.8}Applies Green Stake{}"
         }
       }
