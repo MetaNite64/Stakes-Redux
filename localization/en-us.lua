@@ -19,16 +19,16 @@ return {
       stake_srdx_yellow = {
         name = "Yellow Stake",
         text = {
-          "Required score scales",
-          "faster for each {C:attention}Ante{}",
+          "Interest is earned at a rate",
+          "of {C:gold}$1{} for every {C:gold}$6{} owned",
           "{s:0.8}Applies Orange Stake{}"
         }
       },
       stake_green = {
         name = "Green Stake",
         text = {
-          "Interest is earned at a rate",
-          "of {C:gold}$1{} for every {C:gold}$6{} owned",
+          "Required score scales",
+          "faster for each {C:attention}Ante{}",
           "{s:0.8}Applies Yellow Stake{}"
         }
       },
