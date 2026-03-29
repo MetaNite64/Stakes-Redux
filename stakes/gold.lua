@@ -1,6 +1,6 @@
 SMODS.Stake:take_ownership("gold", {
   prefix_config = { applied_stakes = false, above_stake = false },
-  applied_stakes = { "stake_black" },
+  applied_stakes = { "stake_black", "stake_srdx_citrine" },
   above_stake = "stake_black",
   modifiers = function()
     G.GAME.modifiers.srdx_shop_multiplier = 1.25

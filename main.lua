@@ -14,3 +14,7 @@ assert(SMODS.load_file("stakes/blue.lua"))()
 assert(SMODS.load_file("stakes/purple.lua"))()
 assert(SMODS.load_file("stakes/black.lua"))()
 assert(SMODS.load_file("stakes/gold.lua"))()
+
+assert(SMODS.load_file("stakes/tanzanite.lua"))()
+assert(SMODS.load_file("stakes/sapphire.lua"))()
+assert(SMODS.load_file("stakes/citrine.lua"))()

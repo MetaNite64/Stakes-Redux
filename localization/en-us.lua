@@ -61,7 +61,32 @@ return {
         text = {
           "{C:attention}X1.25{} shop costs, rounded",
           "to the nearest dollar",
-          "{s:0.8}Applies Black Stake{}"
+          "{s:0.8}Applies Black Stake and Citrine Stake{}"
+        }
+      },
+
+      stake_srdx_tanzanite = {
+        name = "Tanzanite Stake",
+        text = {
+          "Shop can have {C:attention}Eternal{} Jokers",
+          "{C:inactive,s:0.8}(Can't be sold or destroyed){}",
+          "{s:0.8}Applies White Stake{}"
+        }
+      },
+      stake_srdx_sapphire = {
+        name = "Sapphire Stake",
+        text = {
+          "Shop can have {C:attention}Perishable{} Jokers",
+          "{C:inactive,s:0.8}(Debuffed after 5 rounds){}",
+          "{s:0.8}Applies Tanzanite Stake{}"
+        }
+      },
+      stake_srdx_citrine = {
+        name = "Citrine Stake",
+        text = {
+          "Shop can have {C:attention}Rental{} Jokers",
+          "{C:inactive,s:0.8}(Costs {C:money,s:0.8}$3{C:inactive, s:0.8} per round)",
+          "{s:0.8}Applies Sapphire Stake{}"
         }
       },
     },
