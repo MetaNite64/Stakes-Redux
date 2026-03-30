@@ -17,6 +17,7 @@ SMODS.Stake {
         if etper_poll > 0.7 then context.card:set_eternal(true)
         elseif etper_poll > 0.4 then context.card:set_perishable(true) end
         if pseudorandom("rental_playing_card" .. G.GAME.round_resets.ante) > 0.7 then context.card:set_rental(true) end
+        if pseudorandom("gigantic_playing_card" .. G.GAME.round_resets.ante) > 0.85 then SMODS.Stickers.srdx_gigantic:apply(context.card, true) end
       end
     end
   end

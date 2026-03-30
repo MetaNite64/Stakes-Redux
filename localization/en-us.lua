@@ -89,13 +89,21 @@ return {
           "{s:0.8}Applies Sapphire Stake{}"
         }
       },
+      stake_srdx_emerald = {
+        name = "Emerald Stake",
+        text = {
+          "Shop can have {C:attention}Gigantic{} Jokers",
+          "{C:inactive,s:0.8}(Takes up 2 Joker slots)",
+          "{s:0.8}Applies Citrine Stake{}"
+        }
+      },
 
       stake_gold = {
         name = "Gold Stake",
         text = {
           "{C:attention}X1.25{} shop costs, rounded",
           "to the nearest dollar",
-          "{s:0.8}Applies Black Stake and Citrine Stake{}"
+          "{s:0.8}Applies Black Stake and Emerald Stake{}"
         }
       },
       stake_srdx_platinum = {
@@ -108,6 +116,28 @@ return {
       }
     },
     Other = {
+      srdx_gigantic = {
+        name = "Gigantic",
+        text = {
+          "Takes up",
+          "{C:attention}2{} Joker slots"
+        }
+      },
+      srdx_gigantic_playing = {
+        name = "Gigantic",
+        text = {
+          "Takes up",
+          "{C:attention}2{} hand space"
+        }
+      },
+      srdx_pink_sticker = {
+        name = "Pink Sticker",
+        text = {
+          "Used this Joker",
+          "to win on {C:attention}Pink{}",
+          "{C:attention}Stake{} difficulty"
+        }
+      },
       srdx_yellow_sticker = {
         name = "Yellow Sticker",
         text = {
@@ -115,7 +145,20 @@ return {
           "to win on {C:attention}Yellow{}",
           "{C:attention}Stake{} difficulty"
         }
-      }
+      },
+      srdx_platinum_sticker = {
+        name = "Platinum Sticker",
+        text = {
+          "Used this Joker",
+          "to win on {C:attention}Platinum{}",
+          "{C:attention}Stake{} difficulty"
+        }
+      },
     },
+  },
+  misc = {
+    labels = {
+      srdx_gigantic = "Gigantic"
+    }
   }
 }

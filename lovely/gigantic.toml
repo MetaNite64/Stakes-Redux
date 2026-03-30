@@ -1,0 +1,13 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+# generate_card_ui()
+# remove extra_slots_used tooltip from gigantic cards
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+match_indent = true
+position = "at"
+pattern = "if card and card.ability and (card.ability.extra_slots_used or 0) ~= 0 then"
+payload = "if card and card.ability and (card.ability.extra_slots_used or 0) ~= 0 and not card.ability.srdx_gigantic then"
