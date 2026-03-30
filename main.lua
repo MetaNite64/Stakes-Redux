@@ -21,13 +21,6 @@ G.ARGS.LOC_COLOURS["srdx_citrine"] = G.C.SRDX_CITRINE
 G.ARGS.LOC_COLOURS["srdx_emerald"] = G.C.SRDX_EMERALD
 G.ARGS.LOC_COLOURS["srdx_platinum"] = G.C.SRDX_PLATINUM
 
-SRDX_CALCS = {}
-SMODS.current_mod.calculate = function(self, context)
-  for i, v in ipairs(SRDX_CALCS) do
-    v(self, context)
-  end
-end
-
 SMODS.current_mod.optional_features = function()
   return { cardareas = {
     discard = true, deck = true
