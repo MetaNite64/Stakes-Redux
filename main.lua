@@ -12,6 +12,12 @@ SMODS.Atlas {
   path = "stakes.png"
 }
 
+SMODS.Atlas {
+  key = "stickers",
+  px = 71, py = 95,
+  path = "stickers.png"
+}
+
 loc_colour()
 G.C.SRDX_PINK = HEX("FDBDBF")
 G.C.SRDX_TANZANITE = HEX("C75985")

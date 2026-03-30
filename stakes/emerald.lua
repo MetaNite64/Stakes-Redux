@@ -14,6 +14,7 @@ SMODS.Stake {
 
 SMODS.Sticker {
   key = "gigantic",
+  atlas = "stickers",
   badge_colour = G.C.SRDX_EMERALD,
   default_compat = true,
   needs_enable_flag = true,

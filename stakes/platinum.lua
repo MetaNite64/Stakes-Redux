@@ -3,6 +3,8 @@ SMODS.Stake {
   prefix_config = { applied_stakes = false, above_stake = false },
   atlas = "stakes",
   pos = { x = 2, y = 1 },
+  sticker_atlas = "stickers",
+  sticker_pos = { x = 3, y = 0 },
   applied_stakes = { "stake_gold" },
   above_stake = "stake_gold",
   colour = G.C.PLATINUM,
