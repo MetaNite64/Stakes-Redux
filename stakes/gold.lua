@@ -1,5 +1,7 @@
 SMODS.Stake:take_ownership("gold", {
   prefix_config = { applied_stakes = false, above_stake = false },
+  atlas = "stakes",
+  pos = { x = 1, y = 1 },
   applied_stakes = { "stake_black", "stake_srdx_emerald" },
   above_stake = "stake_black",
   modifiers = function()

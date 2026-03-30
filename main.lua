@@ -6,6 +6,12 @@ A mod that adds a separate branch of stakes dedicated to stickers,
 and reworks most of the vanilla stakes.
 --]]
 
+SMODS.Atlas {
+  key = "stakes",
+  px = 29, py = 29,
+  path = "stakes.png"
+}
+
 loc_colour()
 G.C.SRDX_PINK = HEX("FDBDBF")
 G.C.SRDX_TANZANITE = HEX("C75985")
