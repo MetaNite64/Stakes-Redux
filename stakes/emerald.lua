@@ -1,16 +1,18 @@
-SMODS.Stake {
-  key = "emerald",
-  atlas = "stakes",
-  pos = { x = 0, y = 1 },
-  applied_stakes = { "citrine" },
-  above_stake = "citrine",
-  colour = G.C.SRDX_EMERALD,
-  shiny = true,
+if SMODS.current_mod.config.sticker_stakes == 1 then
+  SMODS.Stake {
+    key = "emerald",
+    atlas = "stakes",
+    pos = { x = 0, y = 1 },
+    applied_stakes = { "citrine" },
+    above_stake = "citrine",
+    colour = G.C.SRDX_EMERALD,
+    shiny = true,
 
-  modifiers = function()
-    G.GAME.modifiers.enable_srdx_gigantic = true
-  end
-}
+    modifiers = function()
+      G.GAME.modifiers.enable_srdx_gigantic = true
+    end
+  }
+end
 
 SMODS.Sticker {
   key = "gigantic",

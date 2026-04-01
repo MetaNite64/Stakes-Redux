@@ -14,7 +14,7 @@ return {
         text = {
           "All {C:attention}Blind rewards{}",
           "are {C:gold}$1{} less",
-          "{s:0.8}Applies Pink Stake{}"
+          "{s:0.8}Applies #1# Stake{}"
         }
       },
       stake_orange = {
@@ -37,7 +37,7 @@ return {
         text = {
           "Required score scales",
           "faster for each {C:attention}Ante{}",
-          "{s:0.8}Applies Yellow Stake{}"
+          "{s:0.8}Applies #1# Stake{}"
         }
       },
       stake_blue = {
@@ -85,7 +85,7 @@ return {
         name = "Citrine Stake",
         text = {
           "Shop can have {C:attention}Rental{} Jokers",
-          "{C:inactive,s:0.8}(Costs {C:money,s:0.8}$3{C:inactive, s:0.8} per round)",
+          "{C:inactive,s:0.8}(Costs {C:money,s:0.8}$3{C:inactive,s:0.8} per round)",
           "{s:0.8}Applies Sapphire Stake{}"
         }
       },
@@ -103,7 +103,16 @@ return {
         text = {
           "{C:attention}X1.25{} shop costs, rounded",
           "to the nearest dollar",
-          "{s:0.8}Applies Black Stake and Emerald Stake{}"
+          "{s:0.8}Applies Black Stake#1#{}"
+        }
+      },
+      stake_gold_stickers = {
+        name = "Gold Stake",
+        text = {
+          "{C:attention}X1.25{} shop costs, rounded",
+          "to the nearest dollar",
+          "{s:0.8}All stickers may appear in shop{}",
+          "{s:0.8}Applies Black Stake"
         }
       },
       stake_srdx_platinum = {

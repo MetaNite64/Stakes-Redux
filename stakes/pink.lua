@@ -1,54 +1,18 @@
-SMODS.Stake {
-  key = "pink",
-  atlas = "stakes",
-  pos = { x = 0, y = 0 },
-  sticker_atlas = "stickers",
-  sticker_pos = { x = 1, y = 0 },
-  prefix_config = { applied_stakes = false },
-  applied_stakes = { "stake_white" },
-  above_stake = "emerald",
-  colour = G.C.SRDX_PINK,
-  modifiers = function()
-    G.GAME.modifiers.srdx_skip_shops = true
-  end
-}
+local above = SMODS.current_mod.config.sticker_stakes == 1 and "stake_srdx_emerald" or "stake_white"
 
--- Go to the shop on white stake only
-SMODS.current_mod.calculate = function(self, context)
-  if context.skip_blind and not G.GAME.modifiers.srdx_skip_shops then
-    G.GAME.no_saved = true
-    return { func = function()
-      G.E_MANAGER:add_event(Event {
-        trigger = "after",
-        --blocking = false,
-        func = function()
-          G.E_MANAGER:add_event(Event {
-            trigger = "after",
-            --blocking = false,
-            func = function()
-              if G.STATE ~= G.STATES.SMODS_BOOSTER_OPENED then
-                G.STATE = G.STATES.SHOP
-                G.STATE_COMPLETE = false
-                G.GAME.no_saved = nil
-                return true
-              end
-            end
-          })
-          if G.blind_select then
-            G.blind_select.alignment.offset.y = G.blind_select.alignment.offset.y + G.blind_select.T.h
-            G.E_MANAGER:add_event(Event {
-              trigger = "after",
-              delay = 0.3,
-              func = function()
-                G.blind_select:remove()
-                G.blind_prompt_box:remove()
-                return true
-              end
-            })
-          end
-          return true
-        end
-      })
-    end}
-  end
+if SMODS.current_mod.config.pink_stake == 1 then
+  SMODS.Stake {
+    key = "pink",
+    atlas = "stakes",
+    pos = { x = 0, y = 0 },
+    sticker_atlas = "stickers",
+    sticker_pos = { x = 1, y = 0 },
+    prefix_config = { applied_stakes = false, above_stake = false },
+    applied_stakes = { "stake_white" },
+    above_stake = above,
+    colour = G.C.SRDX_PINK,
+    modifiers = function()
+      G.GAME.modifiers.srdx_skip_shops = true
+    end
+  }
 end
