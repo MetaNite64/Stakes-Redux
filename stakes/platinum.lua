@@ -14,7 +14,7 @@ SMODS.Stake {
   end,
 
   calculate = function(self, context)
-    if context.srdx_modify_booster_card or context.modify_shop_card then
+    if context.modify_booster_card or context.modify_shop_card then
       local set = context.card.config.center.set
       if set == "Default" or set == "Enhanced" then
         local etper_poll = pseudorandom("etper_playing_card" .. G.GAME.round_resets.ante)
