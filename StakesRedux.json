@@ -9,5 +9,7 @@
   "dependencies": [
     "Steamodded (>=1.0.0~BETA-1503a)"
   ],
-  "no_marquee": true
+  "no_marquee": true,
+  "icon_path": "icon.png",
+  "icon_width": 29
 }
