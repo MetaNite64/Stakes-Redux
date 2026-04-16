@@ -6,13 +6,15 @@ if SMODS.current_mod.config.pink_stake ~= 3 then
       return { func = function()
         G.E_MANAGER:add_event(Event {
           trigger = "after",
-          --blocking = false,
+          blocking = false,
           func = function()
             G.E_MANAGER:add_event(Event {
               trigger = "after",
-              --blocking = false,
+              blocking = false,
               func = function()
                 if G.STATE ~= G.STATES.SMODS_BOOSTER_OPENED then
+                  G.GAME.current_round.reroll_cost = G.GAME.round_resets.reroll_cost
+                  G.GAME.current_round.reroll_cost_increase = 0
                   G.STATE = G.STATES.SHOP
                   G.STATE_COMPLETE = false
                   G.GAME.no_saved = nil
