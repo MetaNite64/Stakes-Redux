@@ -20,6 +20,7 @@ SMODS.Atlas {
 
 loc_colour()
 G.C.SRDX_PINK = HEX("FDBDBF")
+G.C.SRDX_CYAN = HEX("0ACAFF")
 G.C.SRDX_TANZANITE = HEX("C75985")
 G.C.SRDX_SAPPHIRE = HEX("687EE7")
 G.C.SRDX_CITRINE = HEX("E3B448")
@@ -27,6 +28,7 @@ G.C.SRDX_EMERALD = HEX("5FAD26")
 G.C.SRDX_PLATINUM = HEX("B8B8E1")
 
 G.ARGS.LOC_COLOURS["srdx_pink"] = G.C.SRDX_PINK
+G.ARGS.LOC_COLOURS["srdx_cyan"] = G.C.SRDX_CYAN
 G.ARGS.LOC_COLOURS["srdx_tanzanite"] = G.C.SRDX_TANZANITE
 G.ARGS.LOC_COLOURS["srdx_sapphire"] = G.C.SRDX_SAPPHIRE
 G.ARGS.LOC_COLOURS["srdx_citrine"] = G.C.SRDX_CITRINE
@@ -58,6 +60,9 @@ if SMODS.current_mod.config.yellow_stake then
   assert(SMODS.load_file("stakes/yellow.lua"))()
 end
 assert(SMODS.load_file("stakes/green.lua"))()
+if SMODS.current_mod.config.cyan_stake then
+  assert(SMODS.load_file("stakes/cyan.lua"))()
+end
 assert(SMODS.load_file("stakes/blue.lua"))()
 assert(SMODS.load_file("stakes/purple.lua"))()
 assert(SMODS.load_file("stakes/black.lua"))()

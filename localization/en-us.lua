@@ -40,12 +40,20 @@ return {
           "{s:0.8}Applies #1# Stake{}"
         }
       },
-      stake_blue = {
-        name = "Blue Stake",
+      stake_srdx_cyan = {
+        name = "Cyan Stake",
         text = {
           "Hand level ups are",
           "{C:attention}80%{} as effective",
           "{s:0.8}Applies Green Stake{}"
+        }
+      },
+      stake_blue = {
+        name = "Blue Stake",
+        text = {
+          "When cards are discarded",
+          "{C:attention}one less card{} is drawn",
+          "{s:0.8}Applies #1# Stake{}"
         }
       },
       stake_purple = {

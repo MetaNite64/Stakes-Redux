@@ -28,6 +28,12 @@ stakesredux.config_tab = function()
         ref_value = "yellow_stake"
       },
       create_toggle {
+        label = "Cyan Stake",
+        active_colour = HEX("40C67D"),
+        ref_table = stakesredux.config,
+        ref_value = "cyan_stake"
+      },
+      create_toggle {
         label = "Platinum Stake",
         active_colour = HEX("40C67D"),
         ref_table = stakesredux.config,
