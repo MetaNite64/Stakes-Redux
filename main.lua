@@ -26,6 +26,7 @@ G.C.SRDX_SAPPHIRE = HEX("687EE7")
 G.C.SRDX_CITRINE = HEX("E3B448")
 G.C.SRDX_EMERALD = HEX("5FAD26")
 G.C.SRDX_OBSIDIAN = HEX("4F4F4F")
+G.C.SRDX_BIXBITE = HEX("A10000")
 G.C.SRDX_PLATINUM = HEX("B8B8E1")
 
 G.ARGS.LOC_COLOURS["srdx_pink"] = G.C.SRDX_PINK
@@ -35,6 +36,7 @@ G.ARGS.LOC_COLOURS["srdx_sapphire"] = G.C.SRDX_SAPPHIRE
 G.ARGS.LOC_COLOURS["srdx_citrine"] = G.C.SRDX_CITRINE
 G.ARGS.LOC_COLOURS["srdx_emerald"] = G.C.SRDX_EMERALD
 G.ARGS.LOC_COLOURS["srdx_obsidian"] = G.C.SRDX_OBSIDIAN
+G.ARGS.LOC_COLOURS["srdx_bixbite"] = G.C.SRDX_BIXBITE
 G.ARGS.LOC_COLOURS["srdx_platinum"] = G.C.SRDX_PLATINUM
 
 SMODS.current_mod.optional_features = function()
@@ -59,6 +61,9 @@ if SMODS.current_mod.config.gigantic_sticker then
 end
 if SMODS.current_mod.config.blighted_sticker then
   assert(SMODS.load_file("stakes/obsidian.lua"))()
+end
+if SMODS.current_mod.config.traitorous_sticker then
+  assert(SMODS.load_file("stakes/bixbite.lua"))()
 end
 
 assert(SMODS.load_file("stakes/white.lua"))()

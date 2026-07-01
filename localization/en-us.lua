@@ -108,6 +108,13 @@ return {
           "{s:0.8}Applies #1# Stake{}"
         }
       },
+      stake_srdx_bixbite = {
+        name = "Bixbite Stake",
+        text = {
+          "Shop can have {C:attention}Traitorous{} Jokers",
+          "{s:0.8}Applies #1# Stake{}"
+        }
+      },
 
       stake_gold = {
         name = "Gold Stake",
@@ -169,6 +176,22 @@ return {
           "it reaches {C:chips}0{} Chips"
         }
       },
+      srdx_traitorous = {
+        name = "Traitorous",
+        text = {
+          "After a hand is played,",
+          "gain {X:blind,C:white}X#1#{} {C:attention}Blind size{}",
+          "per card {C:attention}held in hand{}"
+        }
+      },
+      srdx_traitorous_playing = {
+        name = "Traitorous",
+        text = {
+          "After this card is played,",
+          "gain {X:blind,C:white}X#1#{} {C:attention}Blind size{}",
+          "per card {C:attention}held in hand{}"
+        }
+      },
       srdx_pink_sticker = {
         name = "Pink Sticker",
         text = {
@@ -200,9 +223,9 @@ return {
       blighted_trigger = "Blighted!"
     },
     labels = {
-      srdx_gigantic = "Gigantic"
       srdx_gigantic = "Gigantic",
       srdx_blighted = "Blighted",
+      srdx_traitorous = "Traitorous"
     }
   }
 }
