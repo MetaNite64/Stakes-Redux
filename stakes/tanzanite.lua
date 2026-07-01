@@ -9,5 +9,8 @@ SMODS.Stake {
   shiny = true,
   modifiers = function()
     G.GAME.modifiers.enable_eternals_in_shop = true
-  end
+  end,
+  loc_vars = function(self, info_queue, card)
+    info_queue[#info_queue + 1] = { set = "Other", key = "eternal" }
+  end,
 }

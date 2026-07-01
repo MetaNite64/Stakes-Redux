@@ -4,5 +4,7 @@ SMODS.Stake:take_ownership("black", {
   above_stake = "stake_purple",
   modifiers = function()
     G.GAME.modifiers.scaling = (G.GAME.modifiers.scaling or 1) + 1
+  end,
+  loc_vars = function(self, info_queue, card)
   end
 })

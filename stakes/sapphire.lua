@@ -8,5 +8,8 @@ SMODS.Stake {
   shiny = true,
   modifiers = function()
     G.GAME.modifiers.enable_perishables_in_shop = true
+  end,
+  loc_vars = function(self, info_queue, card)
+    info_queue[#info_queue + 1] = { set = "Other", key = "perishable", vars = { 5, 5 } }
   end
 }

@@ -77,7 +77,6 @@ return {
         name = "Tanzanite Stake",
         text = {
           "Shop can have {C:attention}Eternal{} Jokers",
-          "{C:inactive,s:0.8}(Can't be sold or destroyed){}",
           "{s:0.8}Applies White Stake{}"
         }
       },
@@ -85,7 +84,6 @@ return {
         name = "Sapphire Stake",
         text = {
           "Shop can have {C:attention}Perishable{} Jokers",
-          "{C:inactive,s:0.8}(Debuffed after 5 rounds){}",
           "{s:0.8}Applies Tanzanite Stake{}"
         }
       },
@@ -93,7 +91,6 @@ return {
         name = "Citrine Stake",
         text = {
           "Shop can have {C:attention}Rental{} Jokers",
-          "{C:inactive,s:0.8}(Costs {C:money,s:0.8}$3{C:inactive,s:0.8} per round)",
           "{s:0.8}Applies Sapphire Stake{}"
         }
       },
@@ -101,7 +98,6 @@ return {
         name = "Emerald Stake",
         text = {
           "Shop can have {C:attention}Gigantic{} Jokers",
-          "{C:inactive,s:0.8}(Takes up 2 Joker slots)",
           "{s:0.8}Applies Citrine Stake{}"
         }
       },

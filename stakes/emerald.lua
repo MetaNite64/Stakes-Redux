@@ -10,6 +10,10 @@ if SMODS.current_mod.config.sticker_stakes == 1 then
 
     modifiers = function()
       G.GAME.modifiers.enable_srdx_gigantic = true
+    end,
+
+    loc_vars = function(self, info_queue, card)
+      info_queue[#info_queue + 1] = { set = "Other", key = "srdx_gigantic" }
     end
   }
 end
