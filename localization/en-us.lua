@@ -208,6 +208,14 @@ return {
           "{C:attention}Stake{} difficulty"
         }
       },
+      srdx_cyan_sticker = {
+        name = "Cyan Sticker",
+        text = {
+          "Used this Joker",
+          "to win on {C:attention}Cyan{}",
+          "{C:attention}Stake{} difficulty"
+        }
+      },
       srdx_platinum_sticker = {
         name = "Platinum Sticker",
         text = {
