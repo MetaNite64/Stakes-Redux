@@ -1,9 +1,9 @@
 SMODS.Stake {
   key = "cyan",
   atlas = "stakes",
-  pos = { x = 0, y = 0 },
+  pos = { x = 1, y = 0 },
   sticker_atlas = "stickers",
-  sticker_pos = { x = 0, y = 0 },
+  sticker_pos = { x = 1, y = 1 },
   prefix_config = { applied_stakes = false, above_stake = false },
   applied_stakes = { "stake_green" },
   above_stake = "stake_green",

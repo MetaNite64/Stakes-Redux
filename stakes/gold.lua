@@ -10,9 +10,9 @@ local gold_stickers = SMODS.current_mod.config.sticker_stakes == 3
 SMODS.Stake:take_ownership("gold", {
   prefix_config = { applied_stakes = false, above_stake = false },
   atlas = "stakes",
-  pos = { x = 1, y = 1 },
+  pos = { x = 2, y = 0 },
   sticker_atlas = "stickers",
-  sticker_pos = { x = 2, y = 0 },
+  sticker_pos = { x = 2, y = 1 },
   applied_stakes = applied,
   above_stake = "stake_black",
   modifiers = function()

@@ -6,7 +6,7 @@ if SMODS.current_mod.config.pink_stake == 1 then
     atlas = "stakes",
     pos = { x = 0, y = 0 },
     sticker_atlas = "stickers",
-    sticker_pos = { x = 1, y = 0 },
+    sticker_pos = { x = 0, y = 1 },
     prefix_config = { applied_stakes = false, above_stake = false },
     applied_stakes = { "stake_white" },
     above_stake = above,

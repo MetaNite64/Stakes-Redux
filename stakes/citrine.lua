@@ -1,7 +1,7 @@
 SMODS.Stake {
   key = "citrine",
   atlas = "stakes",
-  pos = { x = 3, y = 0 },
+  pos = { x = 2, y = 1 },
   applied_stakes = { "sapphire" },
   above_stake = "sapphire",
   colour = G.C.SRDX_CITRINE,

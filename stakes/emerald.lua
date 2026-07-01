@@ -2,7 +2,7 @@ if SMODS.current_mod.config.sticker_stakes == 1 then
   SMODS.Stake {
     key = "emerald",
     atlas = "stakes",
-    pos = { x = 0, y = 1 },
+    pos = { x = 3, y = 1 },
     applied_stakes = { "citrine" },
     above_stake = "citrine",
     colour = G.C.SRDX_EMERALD,
@@ -17,6 +17,7 @@ end
 SMODS.Sticker {
   key = "gigantic",
   atlas = "stickers",
+  pos = { x = 0, y = 0 },
   badge_colour = G.C.SRDX_EMERALD,
   default_compat = true,
   needs_enable_flag = true,
