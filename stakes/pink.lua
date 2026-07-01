@@ -1,4 +1,16 @@
-local above = SMODS.current_mod.config.sticker_stakes == 1 and "stake_srdx_emerald" or "stake_white"
+local above = "stake_white"
+if SMODS.current_mod.config.sticker_stakes == 1 then
+  above = "stake_srdx_citrine"
+  if SMODS.current_mod.config.gigantic_sticker then
+    above = "stake_srdx_emerald"
+  end
+  if SMODS.current_mod.config.blighted_sticker then
+    above = "stake_srdx_obsidian"
+  end
+  if SMODS.current_mod.config.traitorous_sticker then
+    above = "stake_srdx_bixbite"
+  end
+end
 
 if SMODS.current_mod.config.pink_stake == 1 then
   SMODS.Stake {

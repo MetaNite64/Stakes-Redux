@@ -1,9 +1,21 @@
-local gigantic = SMODS.current_mod.config.gigantic_sticker
 local applied = { "stake_black" }
 local stake_loc = ""
 if SMODS.current_mod.config.sticker_stakes == 1 then
-  applied[#applied + 1] = gigantic and "stake_srdx_emerald" or "stake_srdx_citrine"
-  stake_loc = gigantic and " and Emerald Stake" or " and Citrine Stake"
+  local sticker_stake = "stake_srdx_citrine"
+  stake_loc = " and Citrine Stake"
+  if SMODS.current_mod.config.gigantic_sticker then
+    sticker_stake = "stake_srdx_emerald"
+    stake_loc = " and Emerald Stake"
+  end
+  if SMODS.current_mod.config.blighted_sticker then
+    sticker_stake = "stake_srdx_obsidian"
+    stake_loc = " and Obsidian Stake"
+  end
+  if SMODS.current_mod.config.traitorous_sticker then
+    sticker_stake = "stake_srdx_bixbite"
+    stake_loc = " and Bixbite Stake"
+  end
+  applied[#applied + 1] = sticker_stake
 end
 local gold_stickers = SMODS.current_mod.config.sticker_stakes == 3
 
@@ -21,7 +33,9 @@ SMODS.Stake:take_ownership("gold", {
     G.GAME.modifiers.enable_eternals_in_shop = true
     G.GAME.modifiers.enable_perishables_in_shop = true
     G.GAME.modifiers.enable_rentals_in_shop = true
-    if gigantic then G.GAME.modifiers.enable_srdx_gigantic = true end
+    G.GAME.modifiers.enable_srdx_gigantic = true
+    G.GAME.modifiers.enable_srdx_blighted = true
+    G.GAME.modifiers.enable_srdx_traitorous = true
   end,
   loc_vars = function()
     if gold_stickers then return { key = "stake_gold_stickers" } end
