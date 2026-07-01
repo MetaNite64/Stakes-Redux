@@ -1,5 +1,7 @@
 return {
     ["gigantic_sticker"] = true,
+    ["blighted_sticker"] = true,
+    ["traitorous_sticker"] = true,
     ["pink_stake"] = 1, -- 1 = enabled, 2 = disabled but still new white stake, 3 = disabled and vanilla white stake
     ["yellow_stake"] = true,
     ["cyan_stake"] = true,

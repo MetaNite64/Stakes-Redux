@@ -15,30 +15,48 @@ stakesredux.config_tab = function()
       { n = G.UIT.R, config = { align = "cm", padding = 0.1 }, nodes = {
        { n = G.UIT.T, config = { text = "REQUIRES RESTART", colour = G.C.RED, scale = 0.6 }}
       }},
-      create_toggle {
-        label = "Gigantic Sticker",
-        active_colour = HEX("40C67D"),
-        ref_table = stakesredux.config,
-        ref_value = "gigantic_sticker"
-      },
-      create_toggle {
-        label = "Yellow Stake",
-        active_colour = HEX("40C67D"),
-        ref_table = stakesredux.config,
-        ref_value = "yellow_stake"
-      },
-      create_toggle {
-        label = "Cyan Stake",
-        active_colour = HEX("40C67D"),
-        ref_table = stakesredux.config,
-        ref_value = "cyan_stake"
-      },
-      create_toggle {
-        label = "Platinum Stake",
-        active_colour = HEX("40C67D"),
-        ref_table = stakesredux.config,
-        ref_value = "platinum_stake"
-      },
+      { n = G.UIT.R, config = { align = "cm", padding = 0.1 }, nodes = {
+        { n = G.UIT.C, config = { align = "cm", padding = 0.1 }, nodes = {
+          create_toggle {
+            label = "Gigantic Sticker",
+            active_colour = HEX("40C67D"),
+            ref_table = stakesredux.config,
+            ref_value = "gigantic_sticker"
+          },
+          create_toggle {
+            label = "Blighted Sticker",
+            active_colour = HEX("40C67D"),
+            ref_table = stakesredux.config,
+            ref_value = "blighted_sticker"
+          },
+          create_toggle {
+            label = "Traitorous Sticker",
+            active_colour = HEX("40C67D"),
+            ref_table = stakesredux.config,
+            ref_value = "traitorous_sticker"
+          }
+        }},
+        { n = G.UIT.C, config = { align = "cm", padding = 0.1 }, nodes = {
+          create_toggle {
+            label = "Yellow Stake",
+            active_colour = HEX("40C67D"),
+            ref_table = stakesredux.config,
+            ref_value = "yellow_stake"
+          },
+          create_toggle {
+            label = "Cyan Stake",
+            active_colour = HEX("40C67D"),
+            ref_table = stakesredux.config,
+            ref_value = "cyan_stake"
+          },
+          create_toggle {
+            label = "Platinum Stake",
+            active_colour = HEX("40C67D"),
+            ref_table = stakesredux.config,
+            ref_value = "platinum_stake"
+          }
+        }}
+      }},
       create_option_cycle {
         label = "Pink Stake",
         scale = 0.8,
