@@ -101,6 +101,13 @@ return {
           "{s:0.8}Applies Citrine Stake{}"
         }
       },
+      stake_srdx_obsidian = {
+        name = "Obsidian Stake",
+        text = {
+          "Shop can have {C:attention}Blighted{} Jokers",
+          "{s:0.8}Applies #1# Stake{}"
+        }
+      },
 
       stake_gold = {
         name = "Gold Stake",
@@ -143,6 +150,25 @@ return {
           "{C:attention}2{} hand space"
         }
       },
+      srdx_blighted = {
+        name = "Blighted",
+        text = {
+          "When this Joker triggers,",
+          "a random playing card",
+          "loses {C:chips}#1#{} Chips.",
+          "Cards {C:attention}self-destruct{} when",
+          "they reach {C:chips}0{} Chips"
+        }
+      },
+      srdx_blighted_playing = {
+        name = "Blighted",
+        text = {
+          "When this card scores,",
+          "it loses {C:chips}#1#{} Chips.",
+          "It will {C:attention}self-destruct{} when",
+          "it reaches {C:chips}0{} Chips"
+        }
+      },
       srdx_pink_sticker = {
         name = "Pink Sticker",
         text = {
@@ -170,8 +196,13 @@ return {
     },
   },
   misc = {
+    dictionary = {
+      blighted_trigger = "Blighted!"
+    },
     labels = {
       srdx_gigantic = "Gigantic"
+      srdx_gigantic = "Gigantic",
+      srdx_blighted = "Blighted",
     }
   }
 }

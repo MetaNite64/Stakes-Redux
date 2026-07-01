@@ -25,6 +25,7 @@ G.C.SRDX_TANZANITE = HEX("C75985")
 G.C.SRDX_SAPPHIRE = HEX("687EE7")
 G.C.SRDX_CITRINE = HEX("E3B448")
 G.C.SRDX_EMERALD = HEX("5FAD26")
+G.C.SRDX_OBSIDIAN = HEX("4F4F4F")
 G.C.SRDX_PLATINUM = HEX("B8B8E1")
 
 G.ARGS.LOC_COLOURS["srdx_pink"] = G.C.SRDX_PINK
@@ -33,12 +34,17 @@ G.ARGS.LOC_COLOURS["srdx_tanzanite"] = G.C.SRDX_TANZANITE
 G.ARGS.LOC_COLOURS["srdx_sapphire"] = G.C.SRDX_SAPPHIRE
 G.ARGS.LOC_COLOURS["srdx_citrine"] = G.C.SRDX_CITRINE
 G.ARGS.LOC_COLOURS["srdx_emerald"] = G.C.SRDX_EMERALD
+G.ARGS.LOC_COLOURS["srdx_obsidian"] = G.C.SRDX_OBSIDIAN
 G.ARGS.LOC_COLOURS["srdx_platinum"] = G.C.SRDX_PLATINUM
 
 SMODS.current_mod.optional_features = function()
-  return { cardareas = {
-    discard = true, deck = true
-  } }
+  return {
+    cardareas = {
+      discard = true,
+      deck = true
+    },
+    post_trigger = true
+  }
 end
 
 assert(SMODS.load_file("ui.lua"))()
@@ -50,6 +56,9 @@ if SMODS.current_mod.config.sticker_stakes == 1 then
 end
 if SMODS.current_mod.config.gigantic_sticker then
   assert(SMODS.load_file("stakes/emerald.lua"))()
+end
+if SMODS.current_mod.config.blighted_sticker then
+  assert(SMODS.load_file("stakes/obsidian.lua"))()
 end
 
 assert(SMODS.load_file("stakes/white.lua"))()
