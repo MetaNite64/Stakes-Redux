@@ -49,7 +49,8 @@ SMODS.current_mod.optional_features = function()
   }
 end
 
-assert(SMODS.load_file("ui.lua"))()
+assert(SMODS.load_file("ui/modbadge.lua"))()
+assert(SMODS.load_file("ui/config.lua"))()
 
 if SMODS.current_mod.config.sticker_stakes == 1 then
   assert(SMODS.load_file("stakes/tanzanite.lua"))()
