@@ -11,6 +11,14 @@ SMODS.Stake {
   shiny = true,
   modifiers = function()
     G.GAME.modifiers.srdx_sticker_playing_cards = true
+    -- force all stickers on
+    G.GAME.modifiers.enable_eternals_in_shop = true
+    G.GAME.modifiers.enable_perishables_in_shop = true
+    G.GAME.modifiers.enable_rentals_in_shop = true
+    G.GAME.modifiers.enable_srdx_gigantic = true
+    G.GAME.modifiers.enable_srdx_blighted = true
+    G.GAME.modifiers.enable_srdx_traitorous = true
+  end,
   end,
 
   calculate = function(self, context)
@@ -21,7 +29,9 @@ SMODS.Stake {
         if etper_poll > 0.7 then context.card:set_eternal(true)
         elseif etper_poll > 0.4 then context.card:set_perishable(true) end
         if pseudorandom("rental_playing_card" .. G.GAME.round_resets.ante) > 0.7 then context.card:set_rental(true) end
-        if pseudorandom("gigantic_playing_card" .. G.GAME.round_resets.ante) > 0.85 then SMODS.Stickers.srdx_gigantic:apply(context.card, true) end
+        if pseudorandom("gigantic_playing_card" .. G.GAME.round_resets.ante) > 0.85 then context.card:add_sticker("srdx_gigantic", true) end
+        if pseudorandom("blighted_playing_card" .. G.GAME.round_resets.ante) > 0.85 then context.card:add_sticker("srdx_blighted", true) end
+        if pseudorandom("traitorous_playing_card" .. G.GAME.round_resets.ante) > 0.85 then context.card:add_sticker("srdx_traitorous", true) end
       end
     end
   end
