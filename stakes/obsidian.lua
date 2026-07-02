@@ -1,4 +1,4 @@
-if SMODS.current_mod.config.sticker_stakes == 1 then
+if SMODS.current_mod.config.sticker_stakes == 1 or SMODS.current_mod.config.sticker_stakes == 2 then
   local prev_stake = "citrine"
   local stake_loc = "Citrine"
   if SMODS.current_mod.config.gigantic_sticker then
@@ -40,7 +40,7 @@ SMODS.Sticker {
 
   loc_vars = function(self, info_queue, card)
     local key = self.key
-    if card and (card.config.center.set == "Default" or card.config.center.set == "Enhanced") then
+    if card and (card.config.center.set == "Default" or card.config.center.set == "Enhanced") and G.STATE ~= G.STATES.MENU then
       key = key .. "_playing"
     end
     return { vars = { card.ability.srdx_blighted.chip_drain }, key = key }

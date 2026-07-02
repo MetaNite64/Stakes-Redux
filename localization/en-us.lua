@@ -140,6 +140,15 @@ return {
           "on {C:attention}playing cards{}",
           "{s:0.8}Applies Gold Stake{}"
         }
+      },
+      stake_srdx_platinum_stickers = {
+        name = "Platinum Stake",
+        text = {
+          "{C:attention}Stickers{} can appear",
+          "on {C:attention}playing cards{}",
+          "{s:0.8}Next page is skipped, all stickers enabled{}",
+          "{s:0.8}Applies Gold Stake{}"
+        }
       }
     },
     Other = {
@@ -228,7 +237,8 @@ return {
   },
   misc = {
     dictionary = {
-      blighted_trigger = "Blighted!"
+      blighted_trigger = "Blighted!",
+      run_select_srdx_sticker_choice = "Select Stickers"
     },
     labels = {
       srdx_gigantic = "Gigantic",

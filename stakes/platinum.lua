@@ -19,6 +19,11 @@ SMODS.Stake {
     G.GAME.modifiers.enable_srdx_blighted = true
     G.GAME.modifiers.enable_srdx_traitorous = true
   end,
+
+  loc_vars = function(self, info_queue, card)
+    if SMODS.Mods.stakesredux.config.sticker_stakes == 3 then
+      return { key = "stake_srdx_platinum_stickers" }
+    end
   end,
 
   calculate = function(self, context)

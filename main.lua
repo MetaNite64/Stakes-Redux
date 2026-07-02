@@ -51,8 +51,11 @@ end
 
 assert(SMODS.load_file("ui/modbadge.lua"))()
 assert(SMODS.load_file("ui/config.lua"))()
+if SMODS.current_mod.config.sticker_stakes == 3 then
+  assert(SMODS.load_file("ui/runselect.lua"))()
+end
 
-if SMODS.current_mod.config.sticker_stakes == 1 then
+if SMODS.current_mod.config.sticker_stakes == 1 or SMODS.current_mod.config.sticker_stakes == 2 then
   assert(SMODS.load_file("stakes/tanzanite.lua"))()
   assert(SMODS.load_file("stakes/sapphire.lua"))()
   assert(SMODS.load_file("stakes/citrine.lua"))()

@@ -17,7 +17,7 @@ if SMODS.current_mod.config.sticker_stakes == 1 then
   end
   applied[#applied + 1] = sticker_stake
 end
-local gold_stickers = SMODS.current_mod.config.sticker_stakes == 3
+local gold_stickers = SMODS.current_mod.config.sticker_stakes == 5
 
 SMODS.Stake:take_ownership("gold", {
   prefix_config = { applied_stakes = false, above_stake = false },
@@ -29,13 +29,14 @@ SMODS.Stake:take_ownership("gold", {
   above_stake = "stake_black",
   modifiers = function()
     G.GAME.modifiers.srdx_shop_multiplier = 1.25
-    -- no harm in doing this always; this accounts for the sticker stake setting if it's set to apply on gold stake
-    G.GAME.modifiers.enable_eternals_in_shop = true
-    G.GAME.modifiers.enable_perishables_in_shop = true
-    G.GAME.modifiers.enable_rentals_in_shop = true
-    G.GAME.modifiers.enable_srdx_gigantic = true
-    G.GAME.modifiers.enable_srdx_blighted = true
-    G.GAME.modifiers.enable_srdx_traitorous = true
+    if gold_stickers then
+      G.GAME.modifiers.enable_eternals_in_shop = true
+      G.GAME.modifiers.enable_perishables_in_shop = true
+      G.GAME.modifiers.enable_rentals_in_shop = true
+      G.GAME.modifiers.enable_srdx_gigantic = true
+      G.GAME.modifiers.enable_srdx_blighted = true
+      G.GAME.modifiers.enable_srdx_traitorous = true
+    end
   end,
   loc_vars = function()
     if gold_stickers then return { key = "stake_gold_stickers" } end

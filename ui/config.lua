@@ -66,10 +66,10 @@ return {
             current_option = stakesredux.config.pink_stake
         },
         create_option_cycle {
-            label = "Sticker Stakes",
+            label = "Sticker Access",
             scale = 0.8,
             w = 6,
-            options = { "Separate Stakes", "Stickers on White Stake", "Stickers on Gold Stake" },
+            options = { "Separate Stakes", "Interleaved Stakes", "Run Select Page", "Stickers on White Stake", "Stickers on Gold Stake" },
             opt_callback = "update_sticker_stakes",
             current_option = stakesredux.config.sticker_stakes
         }

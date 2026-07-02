@@ -1,4 +1,4 @@
-if SMODS.current_mod.config.sticker_stakes == 1 then
+if SMODS.current_mod.config.sticker_stakes == 1 or SMODS.current_mod.config.sticker_stakes == 2 then
   SMODS.Stake {
     key = "emerald",
     atlas = "stakes",
@@ -28,7 +28,7 @@ SMODS.Sticker {
   rate = 0.15,
 
   loc_vars = function(self, info_queue, card)
-    if card and (card.config.center.set == "Default" or card.config.center.set == "Enhanced") then
+    if card and (card.config.center.set == "Default" or card.config.center.set == "Enhanced") and G.STATE ~= G.STATES.MENU then
       return { key = self.key .. "_playing" }
     end
   end,
