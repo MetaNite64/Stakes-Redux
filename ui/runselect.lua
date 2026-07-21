@@ -1,14 +1,13 @@
 SMODS.RunSelectPage {
   key = "sticker_choice",
-  grid_size = { 2, 3 },
-  --automatic_preview = true,
+  grid_size = { 2, 6 },
   selection_limit = math.huge,
   random_select = false,
 
   generate_pool = function()
     local pool = {}
     for i, v in pairs(SMODS.Stickers) do
-      if i ~= "pinned" then
+      if v.needs_enable_flag and i ~= "pinned" then
         local order = v.order
         if order > 4 then order = order - 1 end
         pool[order] = v
@@ -66,22 +65,3 @@ SMODS.RunSelectPage {
     end
   end
 }
-
--- PR this to SMODS lol
---[[
-local can_change_page_ref = G.FUNCS.run_select_can_change_page
-G.FUNCS.run_select_can_change_page = function(e)
-  can_change_page_ref(e)
-  if e.config.id == "next_selection" then
-    local next_page_index = SMODS.RunSelect.Functions.get_page_key(1)
-    local final = SMODS.RunSelect.Internals.current_page == #SMODS.RunSelect.Internals.pages or next_page_index > #SMODS.RunSelect.Internals.pages
-    local next_button_text = final and localize('run_select_play') or (localize('run_select_'..SMODS.RunSelect.Internals.pages[next_page_index]) .. ' >')
-    if next_button_text ~= SMODS.RunSelect.Internals.next_button_text then
-      SMODS.RunSelect.Internals.next_button_text = next_button_text
-      e.children[1].children[1].config.object:remove()
-      e.children[1].children[1].config.object = DynaText({string = {{ref_table = SMODS.RunSelect.Internals, ref_value = 'next_button_text'}}, colours = {G.C.WHITE}, shadow = true, maxw = 1.8, pop_in_rate = 0, scale = 0.4, silent = true})
-      e.children[1].children[1].config.object.ui_object_updated = true
-    end
-  end
-end
---]]
