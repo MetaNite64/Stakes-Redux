@@ -89,3 +89,7 @@ assert(SMODS.load_file("stakes/gold.lua"))()
 if SMODS.current_mod.config.platinum_stake then
   assert(SMODS.load_file("stakes/platinum.lua"))()
 end
+
+if next(SMODS.find_mod("MoreFluff")) then
+  assert(SMODS.load_file("crossmod/morefluff.lua"))()
+end

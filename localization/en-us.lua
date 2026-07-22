@@ -201,6 +201,29 @@ return {
           "per card {C:attention}held in hand{}"
         }
       },
+
+      mf_heavy_playing = {
+        name = "Heavy",
+        text = {
+          "You can {C:red}discard{} {C:attention}1{} fewer card",
+          "while discarding this card"
+        }
+      },
+      mf_potato_playing = {
+        name = "Potato",
+        text = {
+          "Must be played first"
+        }
+      },
+      mf_suspend_sticker_playing = {
+        name = "Suspended",
+        text = {
+          "When bought, exiles for",
+          "{C:attention}2{} rounds, then",
+          "is returned to your hand"
+        }
+      },
+
       srdx_pink_sticker = {
         name = "Pink Sticker",
         text = {
