@@ -17,7 +17,7 @@ SMODS.RunSelectPage {
   end,
 
   optional = function(self)
-    return SMODS.RunSelect.Setup.choices.stake_choice ~= SMODS.Stakes.stake_srdx_platinum.order
+    return SMODS.RunSelect.Setup.choices.stake_choice ~= "stake_srdx_platinum"
   end,
 
   quick_start_text = function(self, choice)
