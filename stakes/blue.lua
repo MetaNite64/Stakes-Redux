@@ -16,7 +16,10 @@ SMODS.Stake:take_ownership("blue", {
       G.GAME.modifiers.srdx_currently_discarding = #context.full_hand
     end
     if context.drawing_cards and G.GAME.modifiers.srdx_currently_discarding then
-      return { modify = G.GAME.modifiers.srdx_currently_discarding - 1 }
+      local n = G.GAME.modifiers.srdx_currently_discarding - 1
+      if #G.hand.cards + n < 1 then n = 1 end
+      G.GAME.modifiers.srdx_currently_discarding = false
+      return { modify = n }
     end
     if context.hand_drawn then
       G.GAME.modifiers.srdx_currently_discarding = false
