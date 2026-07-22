@@ -1,4 +1,4 @@
-if SMODS.current_mod.config.sticker_stakes == 1 or SMODS.current_mod.config.sticker_stakes == 2 then
+if SMODS.current_mod.config.sticker_stakes == 1 then
   SMODS.Stake {
     key = "emerald",
     atlas = "stakes",

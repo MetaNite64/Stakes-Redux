@@ -1,4 +1,4 @@
-if SMODS.current_mod.config.sticker_stakes == 1 or SMODS.current_mod.config.sticker_stakes == 2 then
+if SMODS.current_mod.config.sticker_stakes == 1 then
   local prev_stake = "citrine"
   local stake_loc = "Citrine"
   if SMODS.current_mod.config.gigantic_sticker then

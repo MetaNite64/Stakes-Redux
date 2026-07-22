@@ -43,7 +43,7 @@ if SMODS.current_mod.config.pink_stake ~= 3 then
 end
 
 -- apply all the stickers if sticker_stakes is set to apply them on white stake
-if SMODS.current_mod.config.sticker_stakes == 4 then
+if SMODS.current_mod.config.sticker_stakes == 3 then
   local gigantic = SMODS.current_mod.config.gigantic_sticker
   SMODS.Stake:take_ownership("white", {
     modifiers = function()

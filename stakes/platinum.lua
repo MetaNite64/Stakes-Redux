@@ -23,7 +23,7 @@ SMODS.Stake {
   end,
 
   loc_vars = function(self, info_queue, card)
-    if SMODS.Mods.stakesredux.config.sticker_stakes == 3 then
+    if SMODS.Mods.stakesredux.config.sticker_stakes == 2 then
       return { key = "stake_srdx_platinum_stickers" }
     end
   end,

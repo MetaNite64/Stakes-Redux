@@ -17,7 +17,7 @@ if SMODS.current_mod.config.sticker_stakes == 1 then
   end
   applied[#applied + 1] = sticker_stake
 end
-local gold_stickers = SMODS.current_mod.config.sticker_stakes == 5
+local gold_stickers = SMODS.current_mod.config.sticker_stakes == 4
 
 SMODS.Stake:take_ownership("gold", {
   prefix_config = { applied_stakes = false, above_stake = false },
