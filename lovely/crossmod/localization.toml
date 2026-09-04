@@ -9,7 +9,7 @@ target = '=[SMODS MoreFluff "localization/default.lua"]'
 match_indent = true
 position = "at"
 pattern = 'name = "Pink Stake",'
-payload = 'name = "Magenta Stake",'
+payload = 'name = "Fuchsia Stake",'
 
 [[patches]]
 [patches.pattern]
@@ -23,8 +23,8 @@ text = {
     "to win on {C:attention}Pink",
 '''
 payload = '''
-name = "Magenta Sticker",
+name = "Fuchsia Sticker",
 text = {
     "Used this Joker",
-    "to win on {C:attention}Magenta",
+    "to win on {C:attention}Fuchsia",
 '''
