@@ -1,0 +1,30 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+# rename morefluff pink stake to magenta stake
+[[patches]]
+[patches.pattern]
+target = '=[SMODS MoreFluff "localization/default.lua"]'
+match_indent = true
+position = "at"
+pattern = 'name = "Pink Stake",'
+payload = 'name = "Magenta Stake",'
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS MoreFluff "localization/default.lua"]'
+match_indent = true
+position = "at"
+pattern = '''
+name = "Pink Sticker",
+text = {
+    "Used this Joker",
+    "to win on {C:attention}Pink",
+'''
+payload = '''
+name = "Magenta Sticker",
+text = {
+    "Used this Joker",
+    "to win on {C:attention}Magenta",
+'''
