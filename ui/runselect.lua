@@ -17,11 +17,11 @@ SMODS.RunSelectPage {
   end,
 
   optional = function(self)
-    return SMODS.RunSelect.Setup.choices.stake_choice ~= "stake_srdx_platinum"
+    return SMODS.Stakes[SMODS.RunSelect.Setup.choices.stake_choice].order < SMODS.Stakes.stake_srdx_platinum.order
   end,
 
   quick_start_text = function(self, choice)
-    if G.PROFILES[G.SETTINGS.profile].last_choices.stake_choice == SMODS.Stakes.stake_srdx_platinum.order then
+    if SMODS.Stakes[G.PROFILES[G.SETTINGS.profile].last_choices.stake_choice].order >= SMODS.Stakes.stake_srdx_platinum.order then
       return "All Stickers"
     end
     local last_choices = G.PROFILES[G.SETTINGS.profile].last_choices.srdx_sticker_choice or {}
@@ -49,7 +49,7 @@ SMODS.RunSelectPage {
 
   set_default = function(self, choice)
     local final = {}
-    for i, v in pairs(choice) do
+    for i, v in pairs(choice or {}) do
       if SMODS.Stickers[i] then final[i] = v end
     end
     return final

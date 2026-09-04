@@ -5,10 +5,14 @@
   "description": "A rework of the stakes in Balatro.",
   "prefix": "srdx",
   "main_file": "main.lua",
-  "version": "0.0.0",
+  "version": "2.0.0-dev",
   "dependencies": [
-    "Steamodded (>=1.0.0~BETA-1531zeebee)"
+    "Steamodded (>=26.829.0)"
   ],
+  "conflicts": [
+    "MoreFluff (<=1.6.0)"
+  ],
+  "priority": -2,
   "no_marquee": true,
   "icon_path": "icon.png",
   "icon_width": 29
