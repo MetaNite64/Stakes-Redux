@@ -49,10 +49,11 @@ SMODS.current_mod.optional_features = function()
   }
 end
 
-assert(SMODS.load_file("ui/modbadge.lua"))()
-assert(SMODS.load_file("ui/config.lua"))()
+assert(SMODS.load_file("utils/modbadge.lua"))()
+assert(SMODS.load_file("utils/config.lua"))()
+assert(SMODS.load_file("utils/modfuncs.lua"))()
 if SMODS.current_mod.config.sticker_stakes == 2 then
-  assert(SMODS.load_file("ui/runselect.lua"))()
+  assert(SMODS.load_file("utils/runselect.lua"))()
 end
 
 if SMODS.current_mod.config.sticker_stakes == 1 then
@@ -90,6 +91,10 @@ if SMODS.current_mod.config.platinum_stake then
   assert(SMODS.load_file("stakes/platinum.lua"))()
 end
 
+-- crossmod
 if next(SMODS.find_mod("MoreFluff")) then
   assert(SMODS.load_file("crossmod/morefluff.lua"))()
+end
+if next(SMODS.find_mod("Bunco")) then
+  assert(SMODS.load_file("crossmod/bunco.lua"))()
 end

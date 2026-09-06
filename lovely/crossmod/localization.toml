@@ -28,3 +28,57 @@ text = {
     "Used this Joker",
     "to win on {C:attention}Fuchsia",
 '''
+
+# rename bunco cyan stake to teal stake
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Bunco "localization/default.lua"]'
+match_indent = true
+position = "at"
+pattern = "['name'] = 'Cyan Stake',"
+payload = "name = 'Teal Stake',"
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Bunco "localization/default.lua"]'
+match_indent = true
+position = "at"
+pattern = '''
+['name'] = 'Cyan Sticker',
+['text'] = {
+    [1] = 'Used this Joker',
+    [2] = 'to win on {C:attention}Cyan',
+'''
+payload = '''
+name = "Teal Sticker",
+text = {
+    "Used this Joker",
+    "to win on {C:attention}Teal",
+'''
+
+# rename bunco pink stake to rose stake
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Bunco "localization/default.lua"]'
+match_indent = true
+position = "at"
+pattern = "['name'] = 'Pink Stake',"
+payload = "name = 'Rose Stake',"
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Bunco "localization/default.lua"]'
+match_indent = true
+position = "at"
+pattern = '''
+['name'] = 'Pink Sticker',
+['text'] = {
+    [1] = 'Used this Joker',
+    [2] = 'to win on {C:attention}Pink',
+'''
+payload = '''
+name = "Rose Sticker",
+text = {
+    "Used this Joker",
+    "to win on {C:attention}Rose",
+'''

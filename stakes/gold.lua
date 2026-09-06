@@ -15,6 +15,14 @@ if SMODS.current_mod.config.sticker_stakes == 1 then
     sticker_stake = "stake_srdx_bixbite"
     stake_loc = " and Bixbite Stake"
   end
+  if next(SMODS.find_mod("MoreFluff")) then
+    sticker_stake = "stake_mf_ultramarine"
+    stake_loc = " and Ultramarine Stake"
+  end
+  if next(SMODS.find_mod("Bunco")) then
+    sticker_stake = "stake_bunc_magenta"
+    stake_loc = " and Magenta Stake"
+  end
   applied[#applied + 1] = sticker_stake
 end
 local gold_stickers = SMODS.current_mod.config.sticker_stakes == 4

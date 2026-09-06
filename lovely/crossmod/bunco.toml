@@ -1,0 +1,63 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+# only load sticker stakes if srdx sticker stakes are on. also prep cyan stake's position
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Bunco "Bunco.lua"]'
+match_indent = true
+position = "before"
+pattern = "SMODS.Stake{ -- Cyan"
+payload = '''
+local srdx_config = SMODS.Mods.stakesredux.config
+if srdx_config.sticker_stakes == 1 then
+    print("creating bunco stakes")
+    local prev_stake = "stake_srdx_citrine"
+    if srdx_config.gigantic_sticker then
+        prev_stake = "stake_srdx_emerald"
+    end
+    if srdx_config.blighted_sticker then
+        prev_stake = "stake_srdx_obsidian"
+    end
+    if srdx_config.traitorous_sticker then
+        prev_stake = "stake_srdx_bixbite"
+    end
+    if next(SMODS.find_mod("MoreFluff")) then
+        prev_stake = "stake_mf_ultramarine"
+    end
+'''
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Bunco "Bunco.lua"]'
+match_indent = true
+position = "before"
+pattern = "SMODS.Stake:take_ownership('gold', {"
+payload = '''
+end
+--[[
+'''
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Bunco "Bunco.lua"]'
+match_indent = true
+position = "before"
+pattern = "-- Consumable editions in collection"
+payload = "--]]"
+
+# bunco cyan stake (now teal stake) goes above the last morefluff or srdx sticker stake
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Bunco "Bunco.lua"]'
+match_indent = true
+position = "at"
+pattern = '''
+applied_stakes = {'orange'},
+above_stake = 'orange',
+'''
+payload = '''
+above_stake = prev_stake,
+applied_stakes = { prev_stake },
+'''

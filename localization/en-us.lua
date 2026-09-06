@@ -224,6 +224,23 @@ return {
         }
       },
 
+      bunc_scattering_playing = {
+        name = "Scattering",
+        text = {
+          "Destroys two random",
+          "cards from deck",
+          "when destroyed"
+        }
+      },
+      bunc_hindered_playing = {
+        name = "Hindered",
+        text = {
+          "Stays in place until",
+          "the next hand is played",
+          "after being discarded"
+        }
+      },
+
       srdx_pink_sticker = {
         name = "Pink Sticker",
         text = {
