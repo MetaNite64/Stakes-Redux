@@ -1,0 +1,9 @@
+{
+    "name": "Stakes_Redux",
+    "description": "A rework of the stakes and stickers in Balatro.",
+    "version_number": "2.0.0",
+    "dependencies": [
+        "Steamodded-Steamodded-26.829.0"
+    ],
+    "website_url": "https://github.com/MetaNite64/Stakes-Redux"
+}

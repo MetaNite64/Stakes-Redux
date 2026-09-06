@@ -2,10 +2,10 @@
   "id": "stakesredux",
   "name": "Stakes Redux",
   "author": ["Meta"],
-  "description": "A rework of the stakes in Balatro.",
+  "description": "A rework of the stakes and stickers in Balatro.",
   "prefix": "srdx",
   "main_file": "main.lua",
-  "version": "2.0.0-dev",
+  "version": "2.0.0",
   "dependencies": [
     "Steamodded (>=26.829.0)"
   ],
