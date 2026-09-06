@@ -28,7 +28,7 @@ SMODS.Sticker {
   rate = 0.15,
 
   loc_vars = function(self, info_queue, card)
-    if card and (card.config.center.set == "Default" or card.config.center.set == "Enhanced") and G.STATE ~= G.STATES.MENU then
+    if card and (card.config.center.set == "Default" or card.config.center.set == "Enhanced") and not card.area.config.collection then
       return { key = self.key .. "_playing" }
     end
   end,

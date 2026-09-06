@@ -50,35 +50,35 @@ G.E_MANAGER:add_event(Event {
     local heavy_loc_ref = SMODS.Stickers.mf_heavy.loc_vars
     SMODS.Stickers.mf_heavy.loc_vars = function(self, info_queue, card)
       local key = self.key
-      if card and (card.config.center.set == "Default" or card.config.center.set == "Enhanced") and G.STATE ~= G.STATES.MENU then
+      if card and (card.config.center.set == "Default" or card.config.center.set == "Enhanced") and not card.area.config.collection then
         key = key .. "_playing"
-        end
-        local ret = heavy_loc_ref and heavy_loc_ref(self, info_queue, card) or {}
-        ret.key = key
-        return ret
       end
+      local ret = heavy_loc_ref and heavy_loc_ref(self, info_queue, card) or {}
+      ret.key = key
+      return ret
+    end
 
     local potato_loc_ref = SMODS.Stickers.mf_potato.loc_vars
     SMODS.Stickers.mf_potato.loc_vars = function(self, info_queue, card)
       local key = self.key
-      if card and (card.config.center.set == "Default" or card.config.center.set == "Enhanced") and G.STATE ~= G.STATES.MENU then
+      if card and (card.config.center.set == "Default" or card.config.center.set == "Enhanced") and not card.area.config.collection then
         key = key .. "_playing"
-        end
-        local ret = potato_loc_ref and potato_loc_ref(self, info_queue, card) or {}
-        ret.key = key
-        return ret
       end
+      local ret = potato_loc_ref and potato_loc_ref(self, info_queue, card) or {}
+      ret.key = key
+      return ret
+    end
 
     local suspend_loc_ref = SMODS.Stickers.mf_suspend_sticker.loc_vars
     SMODS.Stickers.mf_suspend_sticker.loc_vars = function(self, info_queue, card)
       local key = self.key
-      if card and (card.config.center.set == "Default" or card.config.center.set == "Enhanced") and G.STATE ~= G.STATES.MENU then
+      if card and (card.config.center.set == "Default" or card.config.center.set == "Enhanced") and not card.area.config.collection then
         key = key .. "_playing"
-        end
-        local ret = suspend_loc_ref and suspend_loc_ref(self, info_queue, card) or {}
-        ret.key = key
-        return ret
       end
+      local ret = suspend_loc_ref and suspend_loc_ref(self, info_queue, card) or {}
+      ret.key = key
+      return ret
+    end
     return true
   end
 })

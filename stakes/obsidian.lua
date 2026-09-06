@@ -40,7 +40,7 @@ SMODS.Sticker {
 
   loc_vars = function(self, info_queue, card)
     local key = self.key
-    if card and (card.config.center.set == "Default" or card.config.center.set == "Enhanced") and G.STATE ~= G.STATES.MENU then
+    if card and (card.config.center.set == "Default" or card.config.center.set == "Enhanced") and not card.area.config.collection then
       key = key .. "_playing"
     end
     return { vars = { card.ability.srdx_blighted.chip_drain }, key = key }
