@@ -1,0 +1,143 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+# only load sticker stakes if srdx sticker stakes are on. also prep for steel stake's position
+[[patches]]
+[patches.pattern]
+target = '=[SMODS MoreFluff "src/stakes.lua"]'
+match_indent = true
+position = "before"
+pattern = '''
+SMODS.Stake {
+    key = "steel",
+'''
+payload = '''
+local srdx_config = SMODS.Mods.stakesredux.config
+if srdx_config.sticker_stakes == 1 then
+    local prev_stake = "stake_srdx_citrine"
+    if srdx_config.gigantic_sticker then
+        prev_stake = "stake_srdx_emerald"
+    end
+    if srdx_config.blighted_sticker then
+        prev_stake = "stake_srdx_obsidian"
+    end
+    if srdx_config.traitorous_sticker then
+        prev_stake = "stake_srdx_bixbite"
+    end
+'''
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS MoreFluff "src/stakes.lua"]'
+match_indent = true
+position = "before"
+pattern = '''
+SMODS.Stake {
+    key = "hot",
+'''
+payload = "if SMODS.Mods.stakesredux.config.sticker_stakes == 1 then"
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS MoreFluff "src/stakes.lua"]'
+match_indent = true
+position = "before"
+pattern = '''
+SMODS.Stake {
+    key = "ultramarine",
+'''
+payload = "if SMODS.Mods.stakesredux.config.sticker_stakes == 1 then"
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS MoreFluff "src/stakes.lua"]'
+match_indent = true
+position = "before"
+pattern = "SMODS.Sticker {"
+payload = "end"
+
+# mf pink stake (now magenta stake) goes above platinum stake
+[[patches]]
+[patches.pattern]
+target = '=[SMODS MoreFluff "src/stakes.lua"]'
+match_indent = true
+position = "at"
+pattern = '''
+above_stake = "gold",
+applied_stakes = { "gold" },
+'''
+payload = '''
+above_stake = "stake_srdx_platinum",
+applied_stakes = { "stake_srdx_platinum" },
+'''
+
+# grrr why is this so far down
+[[patches]]
+[patches.pattern]
+target = '=[SMODS MoreFluff "src/stakes.lua"]'
+match_indent = true
+position = "at"
+pattern = "prefix_config = { applied_stakes = { mod = false } },"
+payload = "prefix_config = { applied_stakes = false, above_stake = false },"
+
+# steel stake goes above the last srdx sticker stake
+[[patches]]
+[patches.pattern]
+target = '=[SMODS MoreFluff "src/stakes.lua"]'
+match_indent = true
+position = "at"
+pattern = '''
+above_stake = "pink",
+applied_stakes = { "pink" },
+'''
+payload = '''
+prefix_config = { applied_stakes = false, above_stake = false },
+above_stake = prev_stake,
+applied_stakes = { prev_stake },
+'''
+
+# zodiac stake goes above pink stake
+[[patches]]
+[patches.pattern]
+target = '=[SMODS MoreFluff "src/stakes.lua"]'
+match_indent = true
+position = "at"
+pattern = '''
+above_stake = "steel",
+applied_stakes = { "steel" },
+'''
+payload = '''
+above_stake = "pink",
+applied_stakes = { "pink" },
+'''
+
+# hot stake goes above steel stake
+[[patches]]
+[patches.pattern]
+target = '=[SMODS MoreFluff "src/stakes.lua"]'
+match_indent = true
+position = "at"
+pattern = '''
+above_stake = "zodiac",
+applied_stakes = { "zodiac" },
+'''
+payload = '''
+above_stake = "steel",
+applied_stakes = { "steel" },
+'''
+
+# final stake goes above zodiac stake
+[[patches]]
+[patches.pattern]
+target = '=[SMODS MoreFluff "src/stakes.lua"]'
+match_indent = true
+position = "at"
+pattern = '''
+above_stake = "ultramarine",
+applied_stakes = { "ultramarine" },
+'''
+payload = '''
+above_stake = "zodiac",
+applied_stakes = { "zodiac" },
+'''

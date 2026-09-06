@@ -2,7 +2,7 @@ if SMODS.current_mod.config.sticker_stakes == 1 then
   SMODS.Stake {
     key = "emerald",
     atlas = "stakes",
-    pos = { x = 0, y = 1 },
+    pos = { x = 3, y = 1 },
     applied_stakes = { "citrine" },
     above_stake = "citrine",
     colour = G.C.SRDX_EMERALD,
@@ -10,6 +10,10 @@ if SMODS.current_mod.config.sticker_stakes == 1 then
 
     modifiers = function()
       G.GAME.modifiers.enable_srdx_gigantic = true
+    end,
+
+    loc_vars = function(self, info_queue, card)
+      info_queue[#info_queue + 1] = { set = "Other", key = "srdx_gigantic" }
     end
   }
 end
@@ -17,13 +21,14 @@ end
 SMODS.Sticker {
   key = "gigantic",
   atlas = "stickers",
+  pos = { x = 0, y = 0 },
   badge_colour = G.C.SRDX_EMERALD,
   default_compat = true,
   needs_enable_flag = true,
   rate = 0.15,
 
   loc_vars = function(self, info_queue, card)
-    if card and (card.config.center.set == "Default" or card.config.center.set == "Enhanced") then
+    if card and (card.config.center.set == "Default" or card.config.center.set == "Enhanced") and not card.area.config.collection then
       return { key = self.key .. "_playing" }
     end
   end,

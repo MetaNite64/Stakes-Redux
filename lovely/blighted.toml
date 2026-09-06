@@ -1,0 +1,23 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+# Card:generate_UIBox_ability_table()
+# get the base chips instead of the base rank
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+match_indent = true
+position = "at"
+pattern = "nominal_chips = self.base.nominal ~= 0 and self.base.nominal or nil,"
+payload = "nominal_chips = self.base.chips ~= 0 and self.base.chips or nil,"
+
+# Card:get_chip_bonus()
+# use base chips instead of base nominal rank
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+match_indent = true
+position = "at"
+pattern = "return self.base.nominal + self.ability.bonus + (self.ability.perma_bonus or 0)"
+payload = "return self.base.chips + self.ability.bonus + (self.ability.perma_bonus or 0)"

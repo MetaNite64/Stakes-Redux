@@ -2,15 +2,30 @@ SMODS.Stake {
   key = "platinum",
   prefix_config = { applied_stakes = false, above_stake = false },
   atlas = "stakes",
-  pos = { x = 2, y = 1 },
+  pos = { x = 3, y = 0 },
   sticker_atlas = "stickers",
-  sticker_pos = { x = 3, y = 0 },
+  sticker_pos = { x = 3, y = 1 },
   applied_stakes = { "stake_gold" },
   above_stake = "stake_gold",
   colour = G.C.PLATINUM,
   shiny = true,
   modifiers = function()
     G.GAME.modifiers.srdx_sticker_playing_cards = true
+    -- force all stickers on
+    G.GAME.modifiers.enable_eternals_in_shop = true
+    G.GAME.modifiers.enable_perishables_in_shop = true
+    G.GAME.modifiers.enable_rentals_in_shop = true
+    for i, v in pairs(SMODS.Stickers) do
+      if v.original_mod and v.needs_enable_flag then
+        G.GAME.modifiers["enable_" .. i] = true
+      end
+    end
+  end,
+
+  loc_vars = function(self, info_queue, card)
+    if SMODS.Mods.stakesredux.config.sticker_stakes == 2 then
+      return { key = "stake_srdx_platinum_stickers" }
+    end
   end,
 
   calculate = function(self, context)
@@ -21,7 +36,9 @@ SMODS.Stake {
         if etper_poll > 0.7 then context.card:set_eternal(true)
         elseif etper_poll > 0.4 then context.card:set_perishable(true) end
         if pseudorandom("rental_playing_card" .. G.GAME.round_resets.ante) > 0.7 then context.card:set_rental(true) end
-        if pseudorandom("gigantic_playing_card" .. G.GAME.round_resets.ante) > 0.85 then SMODS.Stickers.srdx_gigantic:apply(context.card, true) end
+        if pseudorandom("gigantic_playing_card" .. G.GAME.round_resets.ante) > 0.85 then context.card:add_sticker("srdx_gigantic", true) end
+        if pseudorandom("blighted_playing_card" .. G.GAME.round_resets.ante) > 0.85 then context.card:add_sticker("srdx_blighted", true) end
+        if pseudorandom("traitorous_playing_card" .. G.GAME.round_resets.ante) > 0.85 then context.card:add_sticker("srdx_traitorous", true) end
       end
     end
   end

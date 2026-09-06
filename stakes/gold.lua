@@ -1,27 +1,52 @@
-local gigantic = SMODS.current_mod.config.gigantic_sticker
 local applied = { "stake_black" }
 local stake_loc = ""
 if SMODS.current_mod.config.sticker_stakes == 1 then
-  applied[#applied + 1] = gigantic and "stake_srdx_emerald" or "stake_srdx_citrine"
-  stake_loc = gigantic and " and Emerald Stake" or " and Citrine Stake"
+  local sticker_stake = "stake_srdx_citrine"
+  stake_loc = " and Citrine Stake"
+  if SMODS.current_mod.config.gigantic_sticker then
+    sticker_stake = "stake_srdx_emerald"
+    stake_loc = " and Emerald Stake"
+  end
+  if SMODS.current_mod.config.blighted_sticker then
+    sticker_stake = "stake_srdx_obsidian"
+    stake_loc = " and Obsidian Stake"
+  end
+  if SMODS.current_mod.config.traitorous_sticker then
+    sticker_stake = "stake_srdx_bixbite"
+    stake_loc = " and Bixbite Stake"
+  end
+  if next(SMODS.find_mod("MoreFluff")) then
+    sticker_stake = "stake_mf_ultramarine"
+    stake_loc = " and Ultramarine Stake"
+  end
+  if next(SMODS.find_mod("Bunco")) then
+    sticker_stake = "stake_bunc_magenta"
+    stake_loc = " and Magenta Stake"
+  end
+  applied[#applied + 1] = sticker_stake
 end
-local gold_stickers = SMODS.current_mod.config.sticker_stakes == 3
+local gold_stickers = SMODS.current_mod.config.sticker_stakes == 4
 
 SMODS.Stake:take_ownership("gold", {
   prefix_config = { applied_stakes = false, above_stake = false },
   atlas = "stakes",
-  pos = { x = 1, y = 1 },
+  pos = { x = 2, y = 0 },
   sticker_atlas = "stickers",
-  sticker_pos = { x = 2, y = 0 },
+  sticker_pos = { x = 2, y = 1 },
   applied_stakes = applied,
   above_stake = "stake_black",
   modifiers = function()
     G.GAME.modifiers.srdx_shop_multiplier = 1.25
-    -- no harm in doing this always; this accounts for the sticker stake setting if it's set to apply on gold stake
-    G.GAME.modifiers.enable_eternals_in_shop = true
-    G.GAME.modifiers.enable_perishables_in_shop = true
-    G.GAME.modifiers.enable_rentals_in_shop = true
-    if gigantic then G.GAME.modifiers.enable_srdx_gigantic = true end
+    if gold_stickers then
+      G.GAME.modifiers.enable_eternals_in_shop = true
+      G.GAME.modifiers.enable_perishables_in_shop = true
+      G.GAME.modifiers.enable_rentals_in_shop = true
+      for i, v in pairs(SMODS.Stickers) do
+        if v.original_mod and v.needs_enable_flag then
+          G.GAME.modifiers["enable_" .. i] = true
+        end
+      end
+    end
   end,
   loc_vars = function()
     if gold_stickers then return { key = "stake_gold_stickers" } end

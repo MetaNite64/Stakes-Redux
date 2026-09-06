@@ -5,6 +5,8 @@ SMODS.Stake:take_ownership("orange", {
   modifiers = function()
     G.GAME.modifiers.srdx_edition_rare = true
   end,
+  loc_vars = function(self, info_queue, card)
+  end
 })
 
 local poll_edition_ref = poll_edition

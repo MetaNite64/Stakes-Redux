@@ -9,5 +9,8 @@ priority = 0
 target = "functions/common_events.lua"
 match_indent = true
 position = "at"
-pattern = "if card and card.ability and (card.ability.extra_slots_used or 0) ~= 0 then"
-payload = "if card and card.ability and (card.ability.extra_slots_used or 0) ~= 0 and not card.ability.srdx_gigantic then"
+pattern = "if not hide_desc and card and card.ability and (card.ability.extra_slots_used or 0) ~= 0 then"
+payload = '''
+local minus_gigantic = card and card.ability and card.ability.srdx_gigantic and 1 or 0
+if not hide_desc and card and card.ability and ((card.ability.extra_slots_used or 0) - minus_gigantic) ~= 0 then
+'''
