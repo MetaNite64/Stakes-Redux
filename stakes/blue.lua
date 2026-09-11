@@ -12,7 +12,7 @@ SMODS.Stake:take_ownership("blue", {
     G.GAME.modifiers.srdx_currently_discarding = false
   end,
   calculate = function(self, context)
-    if context.pre_discard then
+    if context.pre_discard and not context.hook then
       G.GAME.modifiers.srdx_currently_discarding = #context.full_hand
     end
     if context.drawing_cards and G.GAME.modifiers.srdx_currently_discarding then
