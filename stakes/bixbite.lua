@@ -37,7 +37,7 @@ SMODS.Sticker {
   default_compat = true,
   needs_enable_flag = true,
   rate = 0.15,
-  config = { xblindsize = 0.2 },
+  config = { xblindsize = 0.1 },
 
   loc_vars = function(self, info_queue, card)
     local key = self.key
