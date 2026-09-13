@@ -55,12 +55,24 @@ SMODS.Sticker {
       elseif blight.ability.perma_bonus > 0 then
         local leftover = card.ability.srdx_blighted.chip_drain - blight.ability.perma_bonus
         blight.ability.perma_bonus = 0
+        if blight.ability.bonus > leftover then
+          blight.ability.bonus = blight.ability.bonus - leftover
+        elseif blight.ability.bonus > 0 then
+          leftover = leftover - blight.ability.bonus
+          blight.ability.bonus = 0
+          blight.base.chips = blight.base.chips - leftover
+        end
+      elseif blight.ability.bonus > 3 then
+        blight.ability.bonus = blight.ability.bonus - card.ability.srdx_blighted.chip_drain
+      elseif blight.ability.bonus > 0 then
+        local leftover = card.ability.srdx_blighted.chip_drain - blight.ability.bonus
+        blight.ability.bonus = 0
         blight.base.chips = blight.base.chips - leftover
       else
         blight.base.chips = blight.base.chips - card.ability.srdx_blighted.chip_drain
       end
 
-      if blight.base.chips <= 0 then
+      if blight.ability.perma_bonus <= 0 and blight.ability.bonus <= 0 and (blight.base.chips <= 0 or SMODS.has_no_rank(blight)) then
         SMODS.destroy_cards(blight)
       elseif blight.area == G.hand or blight.area == G.play then
         visible = true
@@ -68,7 +80,7 @@ SMODS.Sticker {
       return {
         message = localize("blighted_trigger"),
         colour = G.C.SRDX_OBSIDIAN,
-        message_card = visible and blight or nil
+        message_card = visible and blight or card
       }
     end
 
@@ -100,4 +112,12 @@ local set_base_ref = Card.set_base
 Card.set_base = function(self, card, initial, manual_sprites)
   set_base_ref(self, card, initial, manual_sprites)
   self.base.chips = self.base.nominal
+end
+
+-- copy edits to card.base.chips
+local copy_card_ref = copy_card
+copy_card = function(other, new_card, card_scale, playing_card, strip_edition)
+  local ret = copy_card_ref(other, new_card, card_scale, playing_card, strip_edition)
+  ret.base.chips = other.base.chips
+  return ret
 end
