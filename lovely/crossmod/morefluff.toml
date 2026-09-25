@@ -57,7 +57,7 @@ position = "before"
 pattern = "SMODS.Sticker {"
 payload = "end"
 
-# mf pink stake (now magenta stake) goes above platinum stake
+# mf pink stake (now fuchsia stake) goes above platinum stake
 [[patches]]
 [patches.pattern]
 target = '=[SMODS MoreFluff "src/stakes.lua"]'

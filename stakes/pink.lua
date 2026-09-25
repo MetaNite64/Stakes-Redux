@@ -13,6 +13,9 @@ if SMODS.current_mod.config.sticker_stakes == 1 then
   if next(SMODS.find_mod("MoreFluff")) then
     above = "stake_mf_ultramarine"
   end
+  if next(SMODS.find_mod("Bunco")) then
+    above = "stake_bunc_magenta"
+  end
 end
 
 if SMODS.current_mod.config.pink_stake == 1 then
