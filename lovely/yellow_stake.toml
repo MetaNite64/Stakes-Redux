@@ -11,6 +11,7 @@ position = "at"
 pattern = "if G.GAME.dollars >= 5 and not G.GAME.modifiers.no_interest then"
 payload = '''
 local interest_rate = 5 + (G.GAME.modifiers.srdx_interest_mod or 0)
+if Spectrallib then interest_rate = 5 end
 local interest = G.GAME.interest_amount * math.min(math.floor(G.GAME.dollars / interest_rate), G.GAME.interest_cap / interest_rate)
 if G.GAME.dollars >= interest_rate and not G.GAME.modifiers.no_interest then
 '''
@@ -49,6 +50,7 @@ table.insert(left_text,{n=G.UIT.O, config={object = DynaText({string = {" "..loc
 '''
 payload = '''
 local interest_rate = 5 + (G.GAME.modifiers.srdx_interest_mod or 0)
+if Spectrallib then interest_rate = 5 end
 local interest_max = G.GAME.interest_amount * G.GAME.interest_cap / interest_rate
 table.insert(left_text,{n=G.UIT.O, config={object = DynaText({string = {" "..localize{type = 'variable', key = 'interest', vars = {G.GAME.interest_amount, interest_rate, interest_max}}}, colours = {G.C.UI.TEXT_LIGHT}, shadow = true, pop_in = 0, scale = 0.4*scale, silent = true})}})
 '''

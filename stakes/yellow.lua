@@ -8,7 +8,7 @@ SMODS.Stake {
   colour = G.C.YELLOW,
   modifiers = function()
     G.GAME.modifiers.srdx_interest_mod = 1
-    G.GAME.interest_cap = 30
+    if not Spectrallib then G.GAME.interest_cap = 30 end
   end
 }
 
@@ -46,3 +46,10 @@ SMODS.Voucher:take_ownership("money_tree", {
     }))
   end
 })
+
+if Spectrallib then
+  local slib_interest_ref = Spectrallib.interest_rate
+  Spectrallib.interest_rate = function()
+    return slib_interest_ref() + (G and G.GAME and G.GAME.modifiers.srdx_interest_mod or 0)
+  end
+end
