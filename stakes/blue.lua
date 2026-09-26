@@ -20,7 +20,7 @@ SMODS.Stake:take_ownership("blue", {
     end
   end,
   loc_vars = function(self)
-    return { vars = { stake_loc } }
+    return { key = self.key .. SMODS.Mods.stakesredux.config.blue_stake, vars = { stake_loc } }
   end
 })
 

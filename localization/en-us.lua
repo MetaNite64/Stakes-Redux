@@ -56,6 +56,36 @@ return {
           "{s:0.8}Applies #1# Stake{}"
         }
       },
+      stake_blue1 = {
+        name = "Blue Stake",
+        text = {
+          "{C:attention}-1{} card in Booster Packs",
+          "{s:0.8}Applies #1# Stake{}"
+        }
+      },
+      stake_blue2 = {
+        name = "Blue Stake",
+        text = {
+          "{C:attention}+2{} Win Ante",
+          "{s:0.8}Applies #1# Stake{}"
+        }
+      },
+      stake_blue3 = {
+        name = "Blue Stake",
+        text = {
+          "Face {C:attention}two{} Boss",
+          "Blinds at once",
+          "{s:0.8}Applies #1# Stake{}"
+        }
+      },
+      stake_blue4 = {
+        name = "Blue Stake",
+        text = {
+          "{C:attention}Booster packs{} only restock",
+          "after defeating a {C:attention}Boss Blind{}",
+          "{s:0.8}Applies #1# Stake{}"
+        }
+      },
       stake_purple = {
         name = "Purple Stake",
         text = {
