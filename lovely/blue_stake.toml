@@ -1,0 +1,27 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+# load saved boosters if it's not a new ante on blue stake variant 4
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+match_indent = true
+position = "after"
+pattern = "G.load_shop_booster = nil"
+payload = '''
+elseif G.GAME.modifiers.srdx_slow_boosters and G.GAME.round > 1 and G.GAME.srdx_saved_boosters then
+    print("running saved booster stuff")
+    for i, v in ipairs(G.GAME.srdx_saved_boosters) do
+        local card = Card(G.shop_booster.T.x + G.shop_booster.T.w / 2, G.shop_booster.T.y,
+                          G.CARD_W * 1.27, G.CARD_H * 1.27,
+                          G.P_CARDS.empty,
+                          G.P_CENTERS[v],
+                          { bypass_discovery_center = true, bypass_discovery_ui = true }
+        )
+        create_shop_card_ui(card, "Booster", G.shop_booster)
+        card.ability.booster_pos = G.GAME.srdx_saved_boosters[v]
+        card:start_materialize()
+        G.shop_booster:emplace(card)
+    end
+'''

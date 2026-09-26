@@ -39,6 +39,22 @@ SMODS.current_mod.calculate = function(self, context)
         end}
     end
 
+    -- blue stake variant 3 changing second boss
+    if context.ante_change and context.ante_end then
+        G.GAME.srdx_double_boss = SMODS.get_new_blind("boss")
+        -- blue stake variant 4 allow booster refresh
+        G.GAME.srdx_saved_boosters = false
+    end
+
+    -- blue stake variant 4 saving boosters
+    if context.ending_shop and G.GAME.modifiers.srdx_slow_boosters then
+        G.GAME.srdx_saved_boosters = {}
+        for i, v in ipairs(G.shop_booster.cards) do
+            table.insert(G.GAME.srdx_saved_boosters, v.config.center.key)
+            G.GAME.srdx_saved_boosters[v.config.center.key] = v.ability.booster_pos
+        end
+    end
+
     -- BUNCO CROSSMOD
     -- Scattering playing cards
     if context.remove_playing_cards then
@@ -83,5 +99,12 @@ SMODS.current_mod.set_debuff = function(card)
         end
 
         if card.ability.bunc_reactive and not reactive_condition then return true end
+    end
+end
+
+SMODS.current_mod.reset_game_globals = function(run_start)
+    if run_start then
+        G.GAME.srdx_double_boss = SMODS.get_new_blind("boss")
+        G.GAME.srdx_saved_boosters = {}
     end
 end

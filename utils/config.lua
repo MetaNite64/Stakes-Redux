@@ -72,15 +72,30 @@ return {
             options = { "Separate Stakes", "Run Select Page", "Stickers on White Stake", "Stickers on Gold Stake" },
             opt_callback = "update_sticker_stakes",
             current_option = stakesredux.config.sticker_stakes
-        }
+        },
+        create_option_cycle {
+            label = "Blue Stake Effect",
+            scale = 0.8,
+            w = 8,
+            options = { "-1 card in Booster Pack", "+2 Win Ante", "Face two Boss Blinds at once", "Boosters restock at start of ante" },
+            opt_callback = "update_blue_stake",
+            current_option = stakesredux.config.blue_stake
+        },
+        { n = G.UIT.R, config = { align = "cm", padding = 0.1 }, nodes = {
+            { n = G.UIT.T, config = { text = "Thank you for playtesting for Stakes Redux!", colour = G.C.WHITE, scale = 0.4 }}
+        }}
     }
 }
 end
 
 G.FUNCS.update_pink_stake = function(e)
-stakesredux.config.pink_stake = e.to_key
+    stakesredux.config.pink_stake = e.to_key
 end
 
 G.FUNCS.update_sticker_stakes = function(e)
-stakesredux.config.sticker_stakes = e.to_key
+    stakesredux.config.sticker_stakes = e.to_key
+end
+
+G.FUNCS.update_blue_stake = function(e)
+    stakesredux.config.blue_stake = e.to_key
 end
